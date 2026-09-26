@@ -162,7 +162,7 @@ export default function Footer() {
           gap: '1rem',
         }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.25rem', color: 'var(--text-muted)', fontSize: '0.85rem' }}>
-            <span>© 2025 Adeen Shahzad. Built with</span>
+            <span>© 2026 Adeen Shahzad. Built with</span>
             <Heart size={13} style={{ color: 'var(--accent)', margin: '0 0.2rem' }} />
             <span>and ⚡</span>
           </div>

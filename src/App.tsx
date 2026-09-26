@@ -1,4 +1,4 @@
-import { useState, useEffect, lazy, Suspense } from 'react';
+import { useState, useEffect } from 'react';
 import CyberParticles from './components/CyberParticles';
 import CursorGlow from './components/CursorGlow';
 import InitialLoader from './components/InitialLoader';

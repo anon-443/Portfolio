@@ -22,7 +22,7 @@ export default function Experience() {
             Industry Experience
           </motion.h2>
           <motion.p className="section-subtitle" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={2}>
-            Four cybersecurity internships spanning ethical hacking, enterprise SOC, AI security, and red team operations.
+            Six internships spanning AI security engineering, SOC operations, red teaming, ethical hacking, DevOps, and web development.
           </motion.p>
         </div>
 

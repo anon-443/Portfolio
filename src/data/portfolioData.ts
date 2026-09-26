@@ -7,18 +7,18 @@ export const personalInfo = {
   title: "Cybersecurity Specialist",
   roles: ["Cybersecurity Specialist", "Penetration Tester", "Security Researcher", "Ethical Hacker"],
   tagline: "Securing Digital Systems Through Ethical Hacking, Penetration Testing, and Vulnerability Assessment.",
-  about: `I'm a passionate cybersecurity professional currently pursuing my B.S. in Cybersecurity at Air University, Islamabad. My journey into security began with a deep curiosity about how systems fail — and how to make them more resilient. From static malware analysis to hands-on red team operations across four industry internships, I've built a strong foundation in offensive and defensive security practices. I believe that understanding the attacker's mindset is the most effective way to build truly secure systems.`,
+  about: `I'm a passionate cybersecurity professional currently pursuing my B.S. in Cybersecurity at Air University, Islamabad. My journey into security began with a deep curiosity about how systems fail — and how to make them more resilient. From static malware analysis to hands-on red team operations across six industry internships, I've built a strong foundation in offensive and defensive security practices. I believe that understanding the attacker's mindset is the most effective way to build truly secure systems.`,
   university: "Air University, Islamabad",
   degree: "B.S. Cybersecurity",
   graduationYear: "2028",
-  email: "anonaura.66@gmail.com",
+  email: "adeen.cys@gmail.com",
   github: "https://github.com/anon-443",
   githubUsername: "anon-443",
   linkedin: "https://www.linkedin.com/in/adeen-shahzad-/",
   tryhackme: "https://tryhackme.com/p/adeen",
   location: "Islamabad, Pakistan",
-  resume: "/Adeen_Shahzad_Resume.pdf",
-  now: "Currently deepening expertise in Active Directory attacks and defenses, building VARE v2 with dynamic analysis capabilities, and grinding Hack The Box Pro Labs.",
+  resume: "/Portfolio/Adeen_Shahzad_Resume.pdf",
+  now: "Currently building AI-assisted security pipelines, ML-based intrusion detection systems, and secure software projects while expanding hands-on experience in red teaming and SOC operations.",
 };
 
 // ============================================================
@@ -124,10 +124,10 @@ export const projects: Project[] = [
       "Building analysis pipelines resilient to adversarial file crafting",
     ],
     techStack: ["Python", "CustomTkinter", "pefile", "YARA", "ReportLab", "MITRE ATT&CK", "Regex"],
-    githubUrl: "https://github.com/anon-443",
+    githubUrl: "https://github.com/anon-443/YARA-Strings-Metadata-Static-Malware-Analyzer-Tool",
     category: "Malware Analysis",
     featured: true,
-    image: "/images/malware_sandbox.png",
+    image: "/Portfolio/images/malware_sandbox.png",
   },
   {
     id: "mediconnect",
@@ -159,10 +159,10 @@ export const projects: Project[] = [
       "Importance of security requirements during design, not as an afterthought",
     ],
     techStack: ["FastAPI", "PostgreSQL", "React", "JWT", "bcrypt", "SQLAlchemy", "Python"],
-    githubUrl: "https://github.com/anon-443",
+    githubUrl: "https://github.com/anon-443/MediConnect",
     category: "Web Security",
     featured: true,
-    image: "/images/vulnerability_scanner.png",
+    image: "/Portfolio/images/vulnerability_scanner.png",
   },
   {
     id: "sdfs",
@@ -193,10 +193,10 @@ export const projects: Project[] = [
       "Performance cost of cryptographic operations at scale",
     ],
     techStack: ["Python", "ZTNA", "NIST 800-207", "AES-256", "scikit-learn", "FastAPI"],
-    githubUrl: "https://github.com/anon-443",
+    githubUrl: "https://github.com/anon-443/Secure-Distributed-File-System-with-AI-Monitoring-Agent",
     category: "Network Security",
     featured: true,
-    image: "/images/network_ids.png",
+    image: "/Portfolio/images/network_ids.png",
   },
   {
     id: "netlab",
@@ -225,10 +225,10 @@ export const projects: Project[] = [
       "Writing effective Snort rules from packet analysis",
     ],
     techStack: ["Kali Linux", "VirtualBox", "Ettercap", "Bettercap", "Wireshark", "Snort IDS"],
-    githubUrl: "https://github.com/anon-443",
+    githubUrl: "https://github.com/anon-443/webrecon-framework",
     category: "Network Security",
     featured: false,
-    image: "/images/network_ids.png",
+    image: "/Portfolio/images/network_ids.png",
   },
   {
     id: "rdc",
@@ -256,10 +256,10 @@ export const projects: Project[] = [
       "Multithreaded server design for concurrent client management",
     ],
     techStack: ["Python", "Sockets", "Threading", "Subprocess"],
-    githubUrl: "https://github.com/anon-443",
+    githubUrl: "https://github.com/anon-443/Remote-Desktop-Networking-Project",
     category: "Offensive Security",
     featured: false,
-    image: "/images/malware_sandbox.png",
+    image: "/Portfolio/images/malware_sandbox.png",
   },
   {
     id: "ctf-scheduler",
@@ -286,11 +286,105 @@ export const projects: Project[] = [
       "Importance of input validation even in CLI applications",
     ],
     techStack: ["C++", "STL", "File I/O", "Algorithm Design"],
-    githubUrl: "https://github.com/anon-443",
+    githubUrl: "https://github.com/anon-443/DS_Project_CyberTournamentScheduler",
     category: "Software Engineering",
     featured: false,
-    image: "/images/vulnerability_scanner.png",
+    image: "/Portfolio/images/vulnerability_scanner.png",
   },
+  {
+    id: "ztna-self-healing",
+    title: "ZTNA Self-Healing Network Architecture",
+    tagline: "Zero Trust network layer with dynamic trust scoring and automated response",
+    description:
+      "A NIST SP 800-207 aligned Zero Trust architecture that recalculates device trust on every request and automates the detect, decide, and enforce cycle. AI-assisted threat analysis can trigger firewall policy updates while the SOC dashboard surfaces current risk decisions.",
+    architecture:
+      "Client Request → Trust Scoring Engine → Policy Decision Point → AI Threat Analysis → iptables Enforcement → SOC Dashboard",
+    threatModel:
+      "Designed to reduce lateral movement and contain compromised devices through continuous verification, least privilege, dynamic trust scoring, and automated network enforcement.",
+    securityFeatures: [
+      "Per-request device trust scoring",
+      "NIST SP 800-207 Zero Trust policy enforcement",
+      "AI-assisted anomaly and threat analysis",
+      "Automated iptables response actions",
+      "Real-time SOC dashboard and audit trail",
+    ],
+    challenges: [
+      "Designing a trust model that updates without creating unnecessary access friction",
+      "Connecting AI-assisted decisions to safe and explainable enforcement actions",
+      "Maintaining auditability across distributed policy decisions",
+    ],
+    lessons: [
+      "Zero Trust is an operating model rather than a single network product",
+      "Security automation needs clear decision boundaries and audit records",
+      "Fast containment is most useful when every action remains explainable",
+    ],
+    techStack: ["Python", "Flask", "Scapy", "iptables", "SQLite", "TLS 1.3", "Ollama", "NIST SP 800-207"],
+    githubUrl: "https://github.com/anon-443/ZTNA-Self-Healing-Network-Architecture",
+    category: "Network Security",
+    featured: true,
+    image: "/Portfolio/images/network_ids.png",
+  },
+  {
+    id: "securepipeline",
+    title: "SecurePipeline",
+    tagline: "Enterprise DevSecOps deployment platform with security checks built into delivery",
+    description:
+      "A DevSecOps platform focused on bringing repeatable security checks into application delivery. The project demonstrates how secure build, deployment, and operational practices can be brought together in one workflow.",
+    architecture:
+      "Source Repository → Build Pipeline → Security Checks → Containerized Deployment → Monitoring and Audit",
+    threatModel:
+      "The platform addresses vulnerable dependencies, insecure build configuration, exposed secrets, and deployment drift through automated checks and controlled release workflows.",
+    securityFeatures: [
+      "Security checks integrated into delivery workflows",
+      "Container-aware deployment approach",
+      "Controlled configuration and secrets handling",
+      "Repeatable deployment and audit practices",
+    ],
+    challenges: [
+      "Balancing developer feedback speed with meaningful security gates",
+      "Keeping deployment configuration consistent across environments",
+    ],
+    lessons: [
+      "Security controls are easier to maintain when they are part of the delivery path",
+      "Good DevSecOps design makes secure defaults practical for teams",
+    ],
+    techStack: ["Python", "DevSecOps", "Docker", "CI/CD"],
+    githubUrl: "https://github.com/anon-443/SecurePipeline",
+    category: "Web Security",
+    featured: true,
+    image: "/Portfolio/images/vulnerability_scanner.png",
+  },
+  {
+    id: "cybershield-sme",
+    title: "CyberShield SME",
+    tagline: "Permission-first cybersecurity posture assessment for small businesses",
+    description:
+      "A responsive cybersecurity posture assessment application for small and medium-sized businesses. It performs passive HTTPS, DNS, and RDAP checks, turns the evidence into an A to F posture score, and provides AI-assisted remediation guidance.",
+    architecture:
+      "Authorized Domain → Passive HTTPS/DNS/RDAP Checks → Evidence Collection → Posture Scoring → Remediation Report",
+    threatModel:
+      "The product is designed for defensive assessment and avoids intrusive exploitation. It helps teams identify exposed security gaps while keeping scanning permission-first and evidence-based.",
+    securityFeatures: [
+      "Permission-first passive assessment workflow",
+      "Evidence-led security posture scoring",
+      "HTTPS, DNS, and RDAP checks",
+      "AI-assisted remediation guidance",
+      "Responsive reporting for non-specialist teams",
+    ],
+    challenges: [
+      "Presenting technical evidence in a useful format for small business owners",
+      "Keeping assessment results actionable without overstating risk",
+    ],
+    lessons: [
+      "Security tooling is more useful when findings are connected to practical next steps",
+      "Passive assessment can provide meaningful visibility with lower operational risk",
+    ],
+    techStack: ["TypeScript", "React", "Security Assessment", "DNS", "RDAP"],
+    githubUrl: "https://github.com/anon-443/cybershield-sme",
+    category: "Web Security",
+    featured: true,
+    image: "/Portfolio/images/vulnerability_scanner.png",
+  }
 ];
 
 // ============================================================
@@ -310,68 +404,100 @@ export interface Experience {
 
 export const experiences: Experience[] = [
   {
+    id: "arzens",
+    role: "AI, Automation & Security Engineering Intern",
+    company: "THE ARZENS",
+    type: "Internship · Ongoing",
+    period: "Jul 2026 – Present",
+    description:
+      "Building AI-assisted security pipelines and ML-based intrusion detection systems for real-time threat analysis and automated risk classification.",
+    responsibilities: [
+      "Built Python security pipelines using Ollama for threat analysis, anomaly detection, and risk classification",
+      "Engineered intrusion detection models using Random Forest, XGBoost, and MLP on CICIDS2017-structured data",
+      "Applied NIST AI RMF practices with risk assessments and drift detection workflows",
+      "Delivered a versioned feature engineering pipeline for reproducible ML experiments",
+    ],
+    skills: ["Python", "Ollama", "Scikit-learn", "XGBoost", "NIST AI RMF", "Threat Detection"],
+  },
+  {
+    id: "techbiz-soc",
+    role: "SOC Analyst Intern",
+    company: "Tech Biz Security",
+    type: "Internship · Ongoing",
+    period: "Aug 2026 – Present",
+    description:
+      "Monitoring security events, supporting incident triage, and automating repetitive SOC workflows with Python.",
+    responsibilities: [
+      "Monitored and correlated security events across SIEM dashboards",
+      "Triaged and escalated incidents using structured runbooks",
+      "Mapped observed attack patterns to MITRE ATT&CK techniques",
+      "Automated repetitive SOC tasks with Python and prepared threat intelligence reports",
+    ],
+    skills: ["SIEM", "Incident Triage", "MITRE ATT&CK", "Python", "Threat Intelligence"],
+  },
+  {
     id: "cyberster",
     role: "Red Team Intern",
     company: "Cyberster",
     type: "Internship",
-    period: "2025",
+    period: "Jun 2026 – Sep 2026",
     description:
-      "Conducted red team operations including OSINT, network enumeration, web application attacks, and post-exploitation activities in controlled client environments.",
+      "Performed adversary simulation, reconnaissance, controlled exploitation, and attack-path documentation in isolated lab environments.",
     responsibilities: [
-      "Performed active and passive reconnaissance on target infrastructure",
-      "Conducted web application penetration testing following OWASP methodology",
-      "Executed internal network enumeration and lateral movement simulation",
-      "Authored professional penetration testing reports with remediation guidance",
+      "Performed reconnaissance, vulnerability scanning, and controlled exploitation",
+      "Simulated persistence techniques in authorized lab environments",
+      "Documented complete attack paths and delivered remediation reports",
+      "Applied MITRE ATT&CK techniques across network and web targets",
     ],
-    skills: ["Nmap", "Burp Suite", "Metasploit", "OSINT", "Reporting"],
+    skills: ["Kali Linux", "Nmap", "Metasploit", "OSINT", "MITRE ATT&CK", "Reporting"],
   },
   {
-    id: "arzens",
-    role: "AI, Automation & Security Engineering Intern",
-    company: "THE ARZENS",
-    type: "Internship",
-    period: "2025",
-    description:
-      "Worked at the intersection of AI and cybersecurity — developing automation pipelines, security tooling, and AI-assisted anomaly detection systems.",
-    responsibilities: [
-      "Developed Python automation scripts for security workflow optimization",
-      "Integrated AI models for anomaly detection in system logs",
-      "Built and tested security-focused automation pipelines",
-      "Collaborated on the design of AI-assisted threat detection features",
-    ],
-    skills: ["Python", "AI/ML", "Automation", "Log Analysis", "Security Engineering"],
-  },
-  {
-    id: "ogdcl",
-    role: "Cybersecurity Intern",
-    company: "Oil and Gas Development Company Ltd. (OGDCL)",
-    type: "Internship",
-    period: "2024",
-    description:
-      "Gained experience in enterprise-scale cybersecurity operations within Pakistan's largest oil and gas company. Worked with critical infrastructure protection, SIEM monitoring, and vulnerability assessment.",
-    responsibilities: [
-      "Monitored SIEM dashboards for threat indicators and anomalous activity",
-      "Performed vulnerability scans on internal infrastructure using Nessus",
-      "Assisted in security policy review and critical infrastructure protection assessments",
-      "Participated in incident response tabletop exercises",
-    ],
-    skills: ["Wazuh SIEM", "Nessus", "Vulnerability Assessment", "Critical Infrastructure", "OPSWAT"],
-  },
-  {
-    id: "techbiz",
+    id: "techbiz-ethical-hacking",
     role: "Ethical Hacking Intern",
     company: "Tech Biz Security",
     type: "Internship",
-    period: "2024",
+    period: "Jul 2026 – Aug 2026",
     description:
-      "Entry-level ethical hacking internship focused on penetration testing fundamentals, network security assessments, and hands-on vulnerability exploitation in lab environments.",
+      "Performed full-cycle web application security testing and documented OWASP Top 10 aligned remediation guidance.",
     responsibilities: [
-      "Conducted network penetration tests using Nmap, Nessus, and Metasploit",
-      "Performed web application security assessments on test targets",
-      "Analyzed packet captures with Wireshark for network forensics",
-      "Documented findings and drafted remediation recommendations",
+      "Tested web applications for SQL injection, XSS, authentication bypass, and IDOR",
+      "Performed OSINT reconnaissance and structured vulnerability validation",
+      "Used Burp Suite Professional to intercept and replay HTTP traffic",
+      "Prepared remediation documentation for logging, session management, and input validation gaps",
     ],
-    skills: ["Penetration Testing", "Nmap", "Metasploit", "Wireshark", "Report Writing"],
+    skills: ["Burp Suite", "OWASP Top 10", "SQL Injection", "XSS", "IDOR", "Kali Linux"],
+  },
+  {
+    id: "techskillhub",
+    role: "DevOps & Web Development Intern",
+    company: "TechSkillHub",
+    type: "Internship",
+    period: "Aug 2026 – Sep 2026",
+    description:
+      "Worked on containerized web applications and secure backend features using modern full-stack technologies.",
+    responsibilities: [
+      "Deployed containerized applications with Docker",
+      "Managed environment variables and secrets securely",
+      "Built React and FastAPI features with PostgreSQL integrations",
+      "Implemented JWT-based authentication and role-based access control",
+    ],
+    skills: ["Docker", "React", "FastAPI", "PostgreSQL", "JWT", "RBAC"],
+  },
+  {
+    id: "sqrock",
+    role: "Web Development Intern",
+    company: "Sqrock IT Solutions",
+    type: "Internship",
+    period: "Aug 2026 – Sep 2026",
+    description:
+      "Developed responsive frontend components and REST API integrations with security-conscious access control.",
+    responsibilities: [
+      "Developed responsive frontend components for web applications",
+      "Integrated REST APIs with clear loading and error states",
+      "Implemented RBAC and OAuth flows",
+      "Applied OWASP-aligned input handling practices",
+    ],
+    skills: ["React", "REST APIs", "OAuth", "RBAC", "OWASP", "Responsive UI"],
   },
 ];
 
@@ -514,12 +640,12 @@ export const achievements: Achievement[] = [
   },
   {
     id: "internships",
-    title: "4 Cybersecurity Internships",
+    title: "6 Cybersecurity and Software Internships",
     event: "Industry Experience",
-    position: "Tech Biz Security · OGDCL · THE ARZENS · Cyberster",
-    year: "2024–2025",
+    position: "THE ARZENS · Tech Biz Security · Cyberster · TechSkillHub · Sqrock IT Solutions",
+    year: "2026",
     description:
-      "Completed four distinct cybersecurity internships spanning ethical hacking, enterprise SOC operations, AI-driven security, and red team operations.",
+      "Completed six internships spanning AI security engineering, SOC operations, red teaming, ethical hacking, DevOps, and web development.",
     icon: "💼",
     highlight: false,
   },

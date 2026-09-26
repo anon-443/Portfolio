@@ -559,3 +559,31 @@ body {
   border-radius: 50%;
   flex-shrink: 0;
 }
+
+
+/* Portfolio responsive refinements */
+@media (max-width: 768px) {
+  .section { padding: 4rem 0; }
+  .section-header { margin-bottom: 2.5rem; }
+  .container { padding-inline: 1rem; }
+  .section-title { font-size: clamp(1.8rem, 9vw, 2.5rem); }
+  .section-subtitle { font-size: 0.95rem; }
+  .btn { min-height: 44px; padding-inline: 1rem; white-space: normal; text-align: center; }
+  .command-palette-overlay { padding: 1rem; padding-top: 8vh; }
+  .command-palette { max-height: 84vh; }
+  .github-card { padding: 1.15rem; }
+}
+
+@media (max-width: 560px) {
+  .section { padding: 3.25rem 0; }
+  .section-header { margin-bottom: 2rem; }
+  .section-label { font-size: 0.68rem; letter-spacing: 0.14em; }
+  .btn { width: 100%; justify-content: center; }
+  .command-item { padding-inline: 1rem; }
+  .terminal-body { padding: 1rem; font-size: 0.75rem; }
+}
+
+@media (max-width: 420px) {
+  html { font-size: 15px; }
+  .container { padding-inline: 0.875rem; }
+}

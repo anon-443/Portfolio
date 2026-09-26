@@ -45,7 +45,6 @@ export default function Certifications() {
               {/* Gradient accent bar */}
               <div style={{
                 height: 3,
-                borderRadius: '9999px 9999px 0 0',
                 background: `linear-gradient(90deg, ${cert.color.replace('from-', '').split(' ')[0]} 0%, ${cert.color.split(' ')[2]} 100%)`,
                 marginBottom: '1.25rem',
                 marginTop: '-1.5rem',
@@ -56,7 +55,7 @@ export default function Certifications() {
 
               <div style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start' }}>
                 <img
-                  src="/images/cert_badge.png"
+                  src="/Portfolio/images/cert_badge.png"
                   alt="Security Badge"
                   style={{
                     width: 48, height: 48,

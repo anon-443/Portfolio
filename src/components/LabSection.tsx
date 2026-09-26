@@ -96,7 +96,7 @@ export default function LabSection() {
               {` [Monitor] → Packet Inspection`}
             </div>
             <div style={{ borderRadius: 12, overflow: 'hidden', border: '1px solid var(--border-accent)', boxShadow: '0 0 20px var(--accent-glow)' }}>
-              <img src="/images/network_ids.png" alt="Lab Network Monitor" style={{ width: '100%', height: 160, objectFit: 'cover', display: 'block' }} />
+              <img src="/Portfolio/images/network_ids.png" alt="Lab Network Monitor" style={{ width: '100%', height: 160, objectFit: 'cover', display: 'block' }} />
             </div>
           </div>
         </motion.div>

@@ -36,7 +36,7 @@ Type 'projects' in hero to see full case studies →`,
 ✓ SQL Injection Attacks — EC-Council
 ✓ Intro to Dark Web, Anonymity & Crypto — EC-Council
 ✓ Foundation Level Threat Intel Analyst — arcX`,
-  contact: `Email: anonaura.66@gmail.com
+  contact: `Email: adeen.cys@gmail.com
 GitHub: github.com/anon-443
 LinkedIn: linkedin.com/in/adeen-shahzad-/
 TryHackMe: tryhackme.com/p/adeen`,
@@ -247,7 +247,7 @@ export default function About() {
               position: 'relative',
             }}>
               <img
-                src="/images/about_profile.png"
+                src="/Portfolio/images/about_profile.png"
                 alt="Cybersecurity Workstation"
                 style={{ width: '100%', height: 210, objectFit: 'cover', display: 'block' }}
               />

@@ -23,6 +23,9 @@ const PROJECT_ICONS: Record<string, string> = {
   rdc: '💻',
   'ctf-scheduler': '🏆',
   'vgg-16': '🧠',
+  'ztna-self-healing': '🛡️',
+  securepipeline: '⚙️',
+  'cybershield-sme': '🧭',
 };
 
 function ProjectModal({ project, onClose }: { project: Project; onClose: () => void }) {
