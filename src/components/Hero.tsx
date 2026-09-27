@@ -168,8 +168,8 @@ export default function Hero() {
       <div className="container" style={{ position: 'relative', zIndex: 2 }}>
         <div style={{
           display: 'grid',
-          gridTemplateColumns: 'minmax(0, 1fr) minmax(0, 1fr)',
-          gap: '4rem',
+          gridTemplateColumns: 'minmax(0, 1.15fr) minmax(0, 0.85fr)',
+          gap: '3rem',
           alignItems: 'center',
         }}>
           {/* Left: Text content */}
@@ -244,10 +244,10 @@ export default function Hero() {
               transition={{ duration: 0.5, delay: 0.3 }}
               className="hero-tagline"
               style={{
-                fontSize: 'clamp(1.1rem, 1.5vw, 1.3rem)',
+                fontSize: 'clamp(1rem, 1.35vw, 1.15rem)',
                 color: 'var(--text-secondary)',
                 lineHeight: 1.7,
-                maxWidth: 520,
+                maxWidth: 760,
                 marginBottom: '2.5rem',
               }}
             >

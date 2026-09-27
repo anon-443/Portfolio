@@ -582,6 +582,7 @@ body {
   #hero .hero-role { font-size: 1.05rem !important; overflow-wrap: anywhere; }
   #hero .hero-tagline { margin-bottom: 1.5rem !important; line-height: 1.55 !important; }
   #hero .hero-hud { margin-top: 1rem; }
+  footer p { max-width: 100% !important; }
   .section { padding: 3.25rem 0; }
   .section-header { margin-bottom: 2rem; }
   .section-label { font-size: 0.68rem; letter-spacing: 0.14em; }
