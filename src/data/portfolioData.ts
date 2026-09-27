@@ -7,7 +7,7 @@ export const personalInfo = {
   title: "Purple Team Security Specialist",
   roles: ["Purple Team Security Specialist", "Penetration Tester", "Web Security Tester", "AI Security Engineer", "VAPT & DFIR Analyst"],
   tagline: "Offensive security and web application testing with AI security automation VAPT DFIR and purple team operations.",
-  about: `I'm a passionate cybersecurity professional currently pursuing my B.S. in Cybersecurity at Air University, Islamabad. My journey into security began with a deep curiosity about how systems fail — and how to make them more resilient. From web application testing and red team operations to AI security automation, malware analysis, and digital forensics across six internships, I've built a practical purple team security foundation. I believe that understanding the attacker's mindset is the most effective way to build truly secure systems.`,
+  about: `I'm a cybersecurity undergraduate at Air University, Islamabad. I began my degree and hands-on cybersecurity practice in 2024. My journey into security began with a deep curiosity about how systems fail — and how to make them more resilient. From web application testing and red team operations to AI security automation, malware analysis, and digital forensics across six internships, I've built a practical purple team security foundation. I believe that understanding the attacker's mindset is the most effective way to build truly secure systems.`,
   university: "Air University, Islamabad",
   degree: "B.S. Cybersecurity",
   graduationYear: "2028",
