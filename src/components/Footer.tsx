@@ -37,7 +37,7 @@ export default function Footer() {
               Adeen Shahzad
             </div>
             <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', lineHeight: 1.7, maxWidth: 280, marginBottom: '1.25rem' }}>
-              Purple Team Security. Penetration Testing. AI Security. DFIR.
+              Purple Team Security and penetration testing with AI security and DFIR.
               Air University, Islamabad.
             </p>
             <div style={{ display: 'flex', gap: '0.625rem' }}>

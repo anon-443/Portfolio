@@ -211,7 +211,7 @@ export default function Projects() {
             Case Studies
           </motion.h2>
           <motion.p className="section-subtitle" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }}>
-            Heavy security projects across offensive security, web application testing, AI security, VAPT, DFIR, and purple team operations.
+            High signal security projects across offensive security web application testing AI security VAPT DFIR and purple team operations.
           </motion.p>
         </div>
 

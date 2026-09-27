@@ -1,6 +1,18 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { personalInfo } from '../data/portfolioData';
+
+const CURATED_REPOSITORIES = [
+  'ai-security-automation-platform',
+  'arzens-internship-assignment5-soar-anomaly-detection',
+  'YARA-Strings-Metadata-Static-Malware-Analyzer-Tool',
+  'MediConnect',
+  'Secure-Distributed-File-System-with-AI-Monitoring-Agent',
+  'ZTNA-Self-Healing-Network-Architecture',
+  'SecurePipeline',
+  'securedocs',
+  'cybershield-sme',
+];
 import { Star, GitFork, ExternalLink, Code, Clock } from 'lucide-react';
 import { Github } from './BrandIcons';
 
@@ -65,14 +77,17 @@ export default function GitHubSection() {
 
     Promise.all([
       fetch(`https://api.github.com/users/${username}`),
-      fetch(`https://api.github.com/users/${username}/repos?sort=updated&per_page=6`),
+      fetch(`https://api.github.com/users/${username}/repos?sort=updated&per_page=100`),
     ])
       .then(async ([userRes, repoRes]) => {
         if (!userRes.ok || !repoRes.ok) throw new Error('API error');
         const userData = await userRes.json();
         const repoData = await repoRes.json();
         setUser(userData);
-        setRepos(repoData.filter((r: Repo & { fork: boolean }) => !r.fork));
+        const curated = repoData
+          .filter((r: Repo & { fork: boolean }) => !r.fork && CURATED_REPOSITORIES.includes(r.name))
+          .sort((a: Repo, b: Repo) => CURATED_REPOSITORIES.indexOf(a.name) - CURATED_REPOSITORIES.indexOf(b.name));
+        setRepos(curated);
         setLoading(false);
       })
       .catch(() => {
@@ -92,7 +107,7 @@ export default function GitHubSection() {
             Open Source Activity
           </motion.h2>
           <motion.p className="section-subtitle" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={2}>
-            Live repository data from{' '}
+            Selected security repositories from{' '}
             <a href={personalInfo.github} target="_blank" rel="noopener noreferrer" style={{ color: 'var(--accent)' }}>
               @{personalInfo.githubUsername}
             </a>

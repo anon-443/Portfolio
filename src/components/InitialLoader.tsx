@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Shield } from 'lucide-react';
 
 const BOOT_LINES = [
   { text: '> INITIALIZING SECURITY PROTOCOLS...', delay: 0 },
@@ -55,13 +56,12 @@ export default function InitialLoader({ onDone }: { onDone: () => void }) {
               <div style={{
                 width: 64, height: 64,
                 borderRadius: '16px',
-                background: 'linear-gradient(135deg, var(--accent), #3b82f6)',
+                background: 'linear-gradient(135deg, var(--accent), #4b2a68)',
                 display: 'flex', alignItems: 'center', justifyContent: 'center',
                 margin: '0 auto 1rem',
-                fontSize: '1.75rem',
                 boxShadow: '0 0 40px var(--accent-glow)',
               }}>
-                🛡️
+                <Shield size={38} color="#fff" strokeWidth={3.5} />
               </div>
               <div style={{
                 fontFamily: 'var(--font-mono)',

@@ -247,9 +247,9 @@ export default function About() {
               position: 'relative',
             }}>
               <img
-                src="/Portfolio/images/about_profile.png"
-                alt="Cybersecurity Workstation"
-                style={{ width: '100%', height: 210, objectFit: 'cover', display: 'block' }}
+                src="/Portfolio/images/hooded_shadow_a.png"
+                alt="Faceless hooded cybersecurity silhouette in a security operations center"
+                style={{ width: '100%', height: 260, objectFit: 'cover', objectPosition: 'center', display: 'block' }}
               />
               <div style={{
                 position: 'absolute', bottom: 12, left: 12, right: 12,

@@ -187,7 +187,7 @@ export default function Hero() {
                 marginBottom: '1.5rem',
               }}
             >
-              <Shield size={18} color="var(--accent)" />
+              <Shield size={24} color="var(--accent)" strokeWidth={3.25} />
               <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.9rem', color: 'var(--accent)', letterSpacing: '0.1em' }}>
                 PURPLE TEAM SECURITY
               </span>

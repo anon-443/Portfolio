@@ -84,14 +84,14 @@ export default function App() {
 
           <main id="main-content" style={{ position: 'relative', zIndex: 2 }}>
             <Hero />
-            <About />
-            <Skills />
             <Projects />
+            <Skills />
             <Experience />
+            <LabSection />
+            <About />
             <Certifications />
             <Achievements />
             <GitHubSection />
-            <LabSection />
             <Contact />
           </main>
 

@@ -16,8 +16,8 @@ const ThemeContext = createContext<ThemeContextValue>({
   setAccent: () => {},
   mode: 'dark',
   setMode: () => {},
-  accentColor: '#dc2626',
-  accentGlow: 'rgba(220,38,38,0.18)',
+  accentColor: '#7f1d32',
+  accentGlow: 'rgba(127,29,50,0.24)',
 });
 
 export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
@@ -29,13 +29,13 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     document.documentElement.dataset.theme = nextMode;
     document.documentElement.style.setProperty('--accent', primary);
     document.documentElement.style.setProperty('--accent-glow', glow);
-    document.documentElement.style.setProperty('--accent-dim', glow.replace('0.18', '0.1'));
+    document.documentElement.style.setProperty('--accent-dim', glow.replace('0.24', '0.12').replace('0.18', '0.1'));
     document.documentElement.style.setProperty('--border-accent', border);
   };
 
   const setAccent = (next: AccentColor) => {
     setAccentState(next);
-    localStorage.setItem('portfolio-accent-v2', next);
+    localStorage.setItem('portfolio-accent-v3', next);
     applyTheme(next, mode);
   };
 
@@ -46,7 +46,7 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
   };
 
   useEffect(() => {
-    const savedAccent = (localStorage.getItem('portfolio-accent-v2') as AccentColor | null) || 'red';
+    const savedAccent = (localStorage.getItem('portfolio-accent-v3') as AccentColor | null) || 'red';
     const savedMode = (localStorage.getItem('portfolio-mode') as ThemeMode | null) || 'dark';
     setAccentState(savedAccent in accentColors ? savedAccent : 'red');
     setModeState(savedMode === 'light' ? 'light' : 'dark');

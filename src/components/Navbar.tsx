@@ -6,14 +6,14 @@ import { accentColors, type AccentColor } from '../data/portfolioData';
 
 const NAV_LINKS = [
   { label: 'Home', href: '#hero' },
-  { label: 'About', href: '#about' },
-  { label: 'Skills', href: '#skills' },
   { label: 'Projects', href: '#projects' },
+  { label: 'Skills', href: '#skills' },
   { label: 'Experience', href: '#experience' },
+  { label: 'Lab', href: '#lab' },
+  { label: 'About', href: '#about' },
   { label: 'Certifications', href: '#certifications' },
   { label: 'Achievements', href: '#achievements' },
   { label: 'GitHub', href: '#github' },
-  { label: 'Lab', href: '#lab' },
   { label: 'Contact', href: '#contact' },
 ];
 
@@ -82,13 +82,13 @@ export default function Navbar() {
             aria-label="Adeen Shahzad — Home"
           >
             <div style={{
-              width: 42, height: 42,
-              borderRadius: 8,
-              background: 'linear-gradient(135deg, var(--accent), #3b82f6)',
+              width: 50, height: 50,
+              borderRadius: 12,
+              background: 'linear-gradient(135deg, var(--accent), #4b2a68)',
               display: 'flex', alignItems: 'center', justifyContent: 'center',
               boxShadow: '0 0 16px var(--accent-glow)',
             }}>
-              <Shield size={23} color="#000" strokeWidth={2.5} />
+              <Shield size={30} color="#fff" strokeWidth={3.5} />
             </div>
             <span style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '1.2rem', color: 'var(--text-primary)' }}>
               Adeen Shahzad

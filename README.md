@@ -24,12 +24,14 @@ A responsive React and TypeScript portfolio for Adeen Shahzad, a Purple Team sec
 
 ## Featured projects
 
+- **AI Security Automation Platform** — threat intelligence enrichment, risk scoring, IOC workflows, and explainable response automation
+- **SOAR Anomaly Detection Pipeline** — anomaly detection, IOC management, threat intelligence enrichment, and response workflows
+- **SecureDocs** — role based document security and verification workflows
 - **VARE Static Malware Analysis Tool** — PE analysis, entropy scoring, YARA matching, IOC extraction, MITRE ATT&CK mapping, and PDF reporting
 - **MediConnect Secure Healthcare Platform** — secure full stack application with authentication, RBAC, audit logging, and OWASP aligned controls
 - **Secure Distributed File System with AI Monitoring** — encrypted storage, Zero Trust authentication, AI threat detection, and compliance monitoring
 - **ZTNA Self Healing Network Architecture** — dynamic trust scoring, AI assisted threat analysis, and automated enforcement
 - **SecurePipeline** — DevSecOps deployment platform with security checks integrated into delivery
-- **CyberShield SME** — permission first cybersecurity posture assessment for small businesses
 
 ## Experience covered
 
@@ -41,6 +43,9 @@ The portfolio currently includes the following resume verified roles:
 - Ethical Hacking Intern at Tech Biz Security — Jul 2026 to Aug 2026
 - DevOps and Web Development Intern at TechSkillHub — Aug 2026 to Sep 2026
 - Web Development Intern at Sqrock IT Solutions — Aug 2026 to Sep 2026
+- AI Data Annotation Intern at Infinity Wave Inc — Sep 2026 to Present
+- Cybersecurity Intern at Oil and Gas Development Company Ltd. Pakistan — Jul 2026 to Aug 2026
+- DevOps Engineer Intern at TechSkillHub — Aug 2026 to Sep 2026
 
 ## Tech stack
 
@@ -127,7 +132,7 @@ After replacing it, keep the filename unchanged or update `personalInfo.resume` 
 
 The default accent is red. The available accent choices are:
 
-- Red Team red
+- Burgundy red
 - Cyan
 - Dark purple
 
