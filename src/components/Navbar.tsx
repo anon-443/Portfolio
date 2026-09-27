@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Shield, Menu, X, ChevronRight } from 'lucide-react';
+import { Shield, Menu, X, ChevronRight, Sun, Moon } from 'lucide-react';
 import { useTheme } from '../context/ThemeContext';
 import { accentColors, type AccentColor } from '../data/portfolioData';
 
@@ -23,7 +23,7 @@ export default function Navbar() {
   const [lastY, setLastY] = useState(0);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('hero');
-  const { accent, setAccent } = useTheme();
+  const { accent, setAccent, mode, setMode } = useTheme();
 
   const handleScroll = useCallback(() => {
     const y = window.scrollY;
@@ -64,7 +64,7 @@ export default function Navbar() {
         style={{
           position: 'fixed', top: 0, left: 0, right: 0,
           zIndex: 100,
-          background: scrolled ? 'rgba(8,12,20,0.92)' : 'transparent',
+          background: scrolled ? 'var(--nav-bg)' : 'transparent',
           backdropFilter: scrolled ? 'blur(20px)' : 'none',
           borderBottom: scrolled ? '1px solid var(--border)' : '1px solid transparent',
           transition: 'all 0.3s cubic-bezier(0.4,0,0.2,1)',
@@ -73,7 +73,7 @@ export default function Navbar() {
         transition={{ duration: 0.3, ease: 'easeInOut' }}
         role="banner"
       >
-        <div className="container" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: 64 }}>
+        <div className="container" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: 76 }}>
           {/* Logo */}
           <a
             href="#hero"
@@ -82,15 +82,15 @@ export default function Navbar() {
             aria-label="Adeen Shahzad — Home"
           >
             <div style={{
-              width: 34, height: 34,
+              width: 42, height: 42,
               borderRadius: 8,
               background: 'linear-gradient(135deg, var(--accent), #3b82f6)',
               display: 'flex', alignItems: 'center', justifyContent: 'center',
               boxShadow: '0 0 16px var(--accent-glow)',
             }}>
-              <Shield size={18} color="#000" strokeWidth={2.5} />
+              <Shield size={23} color="#000" strokeWidth={2.5} />
             </div>
-            <span style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '1rem', color: 'var(--text-primary)' }}>
+            <span style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '1.2rem', color: 'var(--text-primary)' }}>
               Adeen Shahzad
             </span>
           </a>
@@ -103,9 +103,9 @@ export default function Navbar() {
                 onClick={() => scrollTo(link.href)}
                 style={{
                   background: 'none', border: 'none', cursor: 'pointer',
-                  padding: '0.4rem 0.75rem',
+                  padding: '0.6rem 0.85rem',
                   borderRadius: 8,
-                  fontSize: '0.875rem',
+                  fontSize: '1rem',
                   fontWeight: 500,
                   color: activeSection === link.href.slice(1) ? 'var(--accent)' : 'var(--text-secondary)',
                   transition: 'color 0.2s, background 0.2s',
@@ -126,7 +126,7 @@ export default function Navbar() {
             {/* Status */}
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', padding: '0.3rem 0.75rem', border: '1px solid var(--border)', borderRadius: 9999, background: 'rgba(255,255,255,0.03)' }}>
               <div className="status-dot" />
-              <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.7rem', color: 'var(--text-muted)', letterSpacing: '0.05em' }}>ONLINE</span>
+              <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.8rem', color: 'var(--text-muted)', letterSpacing: '0.05em' }}>ONLINE</span>
             </div>
 
             {/* Accent switcher */}
@@ -135,20 +135,29 @@ export default function Navbar() {
                 <button
                   key={c}
                   onClick={() => setAccent(c)}
-                  title={accentColors[c].label}
+                  title={`${accentColors[c].label} accent`}
+                  aria-label={`${accentColors[c].label} accent`}
                   aria-pressed={accent === c}
                   style={{
-                    width: 14, height: 14, borderRadius: '50%',
+                    width: 22, height: 22, borderRadius: '50%',
                     background: accentColors[c].primary,
-                    border: accent === c ? `2px solid #fff` : '2px solid transparent',
+                    border: accent === c ? `3px solid #fff` : '2px solid transparent',
                     cursor: 'pointer',
                     outline: 'none',
                     padding: 0,
                     transition: 'transform 0.2s, border-color 0.2s',
-                    transform: accent === c ? 'scale(1.25)' : 'scale(1)',
+                    transform: accent === c ? 'scale(1.2)' : 'scale(1)',
                   }}
                 />
               ))}
+              <button
+                onClick={() => setMode(mode === 'dark' ? 'light' : 'dark')}
+                title={mode === 'dark' ? 'Switch to light theme' : 'Switch to dark theme'}
+                aria-label={mode === 'dark' ? 'Switch to light theme' : 'Switch to dark theme'}
+                style={{ background: 'var(--accent-dim)', border: '1px solid var(--border-accent)', color: 'var(--accent)', borderRadius: 8, padding: '0.35rem', cursor: 'pointer', display: 'flex' }}
+              >
+                {mode === 'dark' ? <Sun size={19} /> : <Moon size={19} />}
+              </button>
             </div>
 
             {/* Mobile burger */}
@@ -159,7 +168,7 @@ export default function Navbar() {
               aria-expanded={mobileOpen}
               className="mobile-burger"
             >
-              {mobileOpen ? <X size={22} /> : <Menu size={22} />}
+              {mobileOpen ? <X size={27} /> : <Menu size={27} />}
             </button>
           </div>
         </div>
@@ -205,7 +214,7 @@ export default function Navbar() {
                   }}
                 >
                   {link.label}
-                  <ChevronRight size={16} />
+                  <ChevronRight size={20} />
                 </button>
               ))}
             </nav>

@@ -1,46 +1,59 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import { accentColors, type AccentColor } from '../data/portfolioData';
 
+type ThemeMode = 'dark' | 'light';
 interface ThemeContextValue {
   accent: AccentColor;
   setAccent: (a: AccentColor) => void;
+  mode: ThemeMode;
+  setMode: (mode: ThemeMode) => void;
   accentColor: string;
   accentGlow: string;
 }
 
 const ThemeContext = createContext<ThemeContextValue>({
-  accent: 'cyan',
+  accent: 'purple',
   setAccent: () => {},
-  accentColor: '#06b6d4',
-  accentGlow: 'rgba(6,182,212,0.15)',
+  mode: 'dark',
+  setMode: () => {},
+  accentColor: '#a855f7',
+  accentGlow: 'rgba(168,85,247,0.18)',
 });
 
 export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [accent, setAccentState] = useState<AccentColor>('cyan');
+  const [accent, setAccentState] = useState<AccentColor>('purple');
+  const [mode, setModeState] = useState<ThemeMode>('dark');
 
-  const setAccent = (a: AccentColor) => {
-    setAccentState(a);
-    const { primary, glow } = accentColors[a];
+  const applyTheme = (nextAccent: AccentColor, nextMode: ThemeMode) => {
+    const { primary, glow, border } = accentColors[nextAccent];
+    document.documentElement.dataset.theme = nextMode;
     document.documentElement.style.setProperty('--accent', primary);
     document.documentElement.style.setProperty('--accent-glow', glow);
-    document.documentElement.style.setProperty('--accent-dim', glow.replace('0.15', '0.08'));
-    document.documentElement.style.setProperty('--border-accent', primary.replace(')', ', 0.2)').replace('rgb', 'rgba'));
+    document.documentElement.style.setProperty('--accent-dim', glow.replace('0.18', '0.1'));
+    document.documentElement.style.setProperty('--border-accent', border);
+  };
+
+  const setAccent = (next: AccentColor) => {
+    setAccentState(next);
+    localStorage.setItem('portfolio-accent', next);
+    applyTheme(next, mode);
+  };
+
+  const setMode = (next: ThemeMode) => {
+    setModeState(next);
+    localStorage.setItem('portfolio-mode', next);
+    applyTheme(accent, next);
   };
 
   useEffect(() => {
-    setAccent('cyan');
+    const savedAccent = (localStorage.getItem('portfolio-accent') as AccentColor | null) || 'purple';
+    const savedMode = (localStorage.getItem('portfolio-mode') as ThemeMode | null) || 'dark';
+    setAccentState(savedAccent in accentColors ? savedAccent : 'purple');
+    setModeState(savedMode === 'light' ? 'light' : 'dark');
+    applyTheme(savedAccent in accentColors ? savedAccent : 'purple', savedMode === 'light' ? 'light' : 'dark');
   }, []);
 
-  return (
-    <ThemeContext.Provider value={{
-      accent,
-      setAccent,
-      accentColor: accentColors[accent].primary,
-      accentGlow: accentColors[accent].glow,
-    }}>
-      {children}
-    </ThemeContext.Provider>
-  );
+  return <ThemeContext.Provider value={{ accent, setAccent, mode, setMode, accentColor: accentColors[accent].primary, accentGlow: accentColors[accent].glow }}>{children}</ThemeContext.Provider>;
 };
 
 export const useTheme = () => useContext(ThemeContext);

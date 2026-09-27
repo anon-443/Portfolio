@@ -198,9 +198,7 @@ export default function Projects() {
   const [activeCategory, setActiveCategory] = useState('All');
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
-  const filtered = activeCategory === 'All'
-    ? projects
-    : projects.filter(p => p.category === activeCategory);
+  const filtered = (activeCategory === 'All' ? projects : projects.filter(p => p.category === activeCategory)).sort((a, b) => Number(b.featured) - Number(a.featured));
 
   return (
     <section id="projects" className="section">
@@ -213,7 +211,7 @@ export default function Projects() {
             Case Studies
           </motion.h2>
           <motion.p className="section-subtitle" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }}>
-            Real security projects — from malware analysis tools to zero trust systems.
+            Heavy security projects across offensive security, web application testing, AI security, VAPT, DFIR, and purple team operations.
           </motion.p>
         </div>
 

@@ -4,10 +4,10 @@
 
 export const personalInfo = {
   name: "Adeen Shahzad",
-  title: "Cybersecurity Specialist",
-  roles: ["Cybersecurity Specialist", "Penetration Tester", "Security Researcher", "Ethical Hacker"],
-  tagline: "Securing Digital Systems Through Ethical Hacking, Penetration Testing, and Vulnerability Assessment.",
-  about: `I'm a passionate cybersecurity professional currently pursuing my B.S. in Cybersecurity at Air University, Islamabad. My journey into security began with a deep curiosity about how systems fail — and how to make them more resilient. From static malware analysis to hands-on red team operations across six industry internships, I've built a strong foundation in offensive and defensive security practices. I believe that understanding the attacker's mindset is the most effective way to build truly secure systems.`,
+  title: "Purple Team Security Specialist",
+  roles: ["Purple Team Security Specialist", "Penetration Tester", "Web Security Tester", "AI Security Engineer", "VAPT & DFIR Analyst"],
+  tagline: "Offensive security, web application testing, AI security automation, VAPT, DFIR, and purple team operations.",
+  about: `I'm a passionate cybersecurity professional currently pursuing my B.S. in Cybersecurity at Air University, Islamabad. My journey into security began with a deep curiosity about how systems fail — and how to make them more resilient. From web application testing and red team operations to AI security automation, malware analysis, and digital forensics across six internships, I've built a practical purple team security foundation. I believe that understanding the attacker's mindset is the most effective way to build truly secure systems.`,
   university: "Air University, Islamabad",
   degree: "B.S. Cybersecurity",
   graduationYear: "2028",
@@ -18,7 +18,7 @@ export const personalInfo = {
   tryhackme: "https://tryhackme.com/p/adeen",
   location: "Islamabad, Pakistan",
   resume: "/Portfolio/Adeen_Shahzad_Resume.pdf",
-  now: "Currently building AI-assisted security pipelines, ML-based intrusion detection systems, and secure software projects while expanding hands-on experience in red teaming and SOC operations.",
+  now: "Currently building AI-assisted security pipelines, ML-based intrusion detection systems, and secure software projects across offensive security, defensive operations, VAPT, AI security, and DFIR.",
 };
 
 // ============================================================
@@ -68,6 +68,18 @@ export const skills: Skill[] = [
   { name: "Kali Linux", icon: "🐉", category: "languages", proficiency: 90 },
   { name: "Windows Security", icon: "🪟", category: "languages", proficiency: 80 },
   { name: "Git", icon: "🌿", category: "languages", proficiency: 85 },
+  { name: "OWASP ZAP", icon: "🕸️", category: "offensive", proficiency: 82 },
+  { name: "Hashcat", icon: "🔑", category: "offensive", proficiency: 76 },
+  { name: "Shodan", icon: "🌐", category: "offensive", proficiency: 78 },
+  { name: "theHarvester", icon: "🛰️", category: "offensive", proficiency: 80 },
+  { name: "Volatility", icon: "🧠", category: "defensive", proficiency: 74 },
+  { name: "Autopsy", icon: "🧾", category: "defensive", proficiency: 72 },
+  { name: "Ollama", icon: "🤖", category: "defensive", proficiency: 80 },
+  { name: "Scikit-learn", icon: "📐", category: "defensive", proficiency: 78 },
+  { name: "XGBoost", icon: "📊", category: "defensive", proficiency: 76 },
+  { name: "NIST AI RMF", icon: "🧩", category: "frameworks", proficiency: 74 },
+  { name: "Purple Team Operations", icon: "🟣", category: "frameworks", proficiency: 82 },
+  { name: "Digital Forensics", icon: "🔎", category: "frameworks", proficiency: 74 },
 ];
 
 // ============================================================
@@ -704,10 +716,9 @@ export const labSetup = {
 // THEME ACCENTS
 // ============================================================
 
-export type AccentColor = "cyan" | "blue" | "emerald";
+export type AccentColor = "purple" | "red";
 
-export const accentColors: Record<AccentColor, { primary: string; glow: string; label: string }> = {
-  cyan: { primary: "#06b6d4", glow: "rgba(6,182,212,0.15)", label: "Cyan" },
-  blue: { primary: "#3b82f6", glow: "rgba(59,130,246,0.15)", label: "Blue" },
-  emerald: { primary: "#10b981", glow: "rgba(16,185,129,0.15)", label: "Emerald" },
+export const accentColors: Record<AccentColor, { primary: string; glow: string; border: string; label: string }> = {
+  purple: { primary: "#a855f7", glow: "rgba(168,85,247,0.18)", border: "rgba(168,85,247,0.32)", label: "Purple Team" },
+  red: { primary: "#ef4444", glow: "rgba(239,68,68,0.18)", border: "rgba(239,68,68,0.32)", label: "Red Team" },
 };

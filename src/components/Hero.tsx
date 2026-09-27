@@ -187,9 +187,9 @@ export default function Hero() {
                 marginBottom: '1.5rem',
               }}
             >
-              <Shield size={13} color="var(--accent)" />
-              <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.75rem', color: 'var(--accent)', letterSpacing: '0.1em' }}>
-                CYBERSECURITY PROFESSIONAL
+              <Shield size={18} color="var(--accent)" />
+              <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.9rem', color: 'var(--accent)', letterSpacing: '0.1em' }}>
+                PURPLE TEAM SECURITY
               </span>
             </motion.div>
 
@@ -201,7 +201,7 @@ export default function Hero() {
               style={{
                 fontFamily: 'var(--font-display)',
                 fontWeight: 800,
-                fontSize: 'clamp(1.75rem, 3.6vw, 3.2rem)',
+                fontSize: 'clamp(2.15rem, 5vw, 4.6rem)',
                 lineHeight: 1.1,
                 letterSpacing: '-0.03em',
                 marginBottom: '0.75rem',
@@ -222,7 +222,7 @@ export default function Hero() {
               transition={{ duration: 0.5, delay: 0.2 }}
               style={{
                 fontFamily: 'var(--font-mono)',
-                fontSize: 'clamp(1.1rem, 2.5vw, 1.5rem)',
+                fontSize: 'clamp(1.25rem, 2.8vw, 1.85rem)',
                 color: 'var(--text-secondary)',
                 marginBottom: '1.5rem',
                 minHeight: '2em',
@@ -240,7 +240,7 @@ export default function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.3 }}
               style={{
-                fontSize: '1.0625rem',
+                fontSize: 'clamp(1.1rem, 1.5vw, 1.3rem)',
                 color: 'var(--text-secondary)',
                 lineHeight: 1.7,
                 maxWidth: 520,
@@ -258,10 +258,10 @@ export default function Hero() {
               style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '3rem', flexWrap: 'nowrap' }}
             >
               <button className="btn btn-primary" onClick={scrollToProjects} style={{ whiteSpace: 'nowrap' }}>
-                View Projects <ChevronRight size={16} />
+                View Projects <ChevronRight size={20} />
               </button>
               <a className="btn btn-outline" href={personalInfo.resume} download="Adeen_Shahzad_Resume.pdf" style={{ whiteSpace: 'nowrap' }}>
-                <Download size={16} /> Download Resume
+                <Download size={20} /> Download Resume
               </a>
               <button className="btn btn-ghost" onClick={scrollToContact} style={{ whiteSpace: 'nowrap' }}>
                 Contact Me
@@ -276,9 +276,9 @@ export default function Hero() {
               style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}
             >
               {[
-                { icon: <Github size={20} />, href: personalInfo.github, label: 'GitHub' },
-                { icon: <Linkedin size={20} />, href: personalInfo.linkedin, label: 'LinkedIn' },
-                { icon: <ExternalLink size={18} />, href: personalInfo.tryhackme, label: 'TryHackMe' },
+                { icon: <Github size={25} />, href: personalInfo.github, label: 'GitHub' },
+                { icon: <Linkedin size={25} />, href: personalInfo.linkedin, label: 'LinkedIn' },
+                { icon: <ExternalLink size={23} />, href: personalInfo.tryhackme, label: 'TryHackMe' },
               ].map(social => (
                 <a
                   key={social.label}
@@ -289,7 +289,7 @@ export default function Hero() {
                   title={social.label}
                   style={{
                     display: 'flex', alignItems: 'center', justifyContent: 'center',
-                    width: 40, height: 40,
+                    width: 52, height: 52,
                     borderRadius: 10,
                     background: 'rgba(255,255,255,0.05)',
                     border: '1px solid var(--border)',
@@ -339,12 +339,12 @@ export default function Hero() {
         }}
         aria-hidden="true"
       >
-        <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.7rem', letterSpacing: '0.15em' }}>SCROLL</span>
+        <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.82rem', letterSpacing: '0.15em' }}>SCROLL</span>
         <motion.div
           animate={{ y: [0, 6, 0] }}
           transition={{ repeat: Infinity, duration: 1.5, ease: 'easeInOut' }}
         >
-          <ArrowDown size={16} />
+          <ArrowDown size={20} />
         </motion.div>
       </motion.div>
 

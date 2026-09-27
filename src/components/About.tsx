@@ -263,7 +263,7 @@ export default function About() {
                 <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
                   <div className="status-dot" />
                   <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.75rem', color: 'var(--accent)' }}>
-                    SECURITY OPERATIONS // LAB
+                    PURPLE TEAM SECURITY // OFFENSE + DEFENSE
                   </span>
                 </div>
                 <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.7rem', color: 'var(--text-muted)' }}>
