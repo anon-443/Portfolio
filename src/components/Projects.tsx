@@ -225,7 +225,7 @@ export default function Projects() {
               key={cat}
               onClick={() => setActiveCategory(cat)}
               style={{
-                padding: '0.45rem 1.1rem', borderRadius: 9999,
+                padding: '0.45rem 1.1rem', minHeight: 44, borderRadius: 9999,
                 border: '1px solid', cursor: 'pointer',
                 borderColor: activeCategory === cat ? 'var(--accent)' : 'var(--border)',
                 background: activeCategory === cat ? 'var(--accent-dim)' : 'transparent',
@@ -313,7 +313,7 @@ export default function Projects() {
                 </span>
                 <div style={{ display: 'flex', gap: '0.5rem' }} onClick={e => e.stopPropagation()}>
                   {project.githubUrl && (
-                    <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" aria-label="GitHub" style={{ color: 'var(--text-muted)', transition: 'color 0.2s' }} onMouseEnter={e => (e.currentTarget.style.color = 'var(--accent)')} onMouseLeave={e => (e.currentTarget.style.color = 'var(--text-muted)')}>
+                    <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" aria-label="GitHub" style={{ color: 'var(--text-muted)', transition: 'color 0.2s', width: 44, height: 44, display: 'flex', alignItems: 'center', justifyContent: 'center' }} onMouseEnter={e => (e.currentTarget.style.color = 'var(--accent)')} onMouseLeave={e => (e.currentTarget.style.color = 'var(--text-muted)')}>
                       <Github size={16} />
                     </a>
                   )}

@@ -1,5 +1,5 @@
 // ============================================================
-// Portfolio Data — Adeen Shahzad | Cybersecurity Specialist
+// Portfolio Data — Adeen Shahzad | Purple Team Security Specialist
 // ============================================================
 
 export const personalInfo = {
@@ -716,9 +716,10 @@ export const labSetup = {
 // THEME ACCENTS
 // ============================================================
 
-export type AccentColor = "purple" | "red";
+export type AccentColor = "red" | "cyan" | "purple";
 
 export const accentColors: Record<AccentColor, { primary: string; glow: string; border: string; label: string }> = {
-  purple: { primary: "#a855f7", glow: "rgba(168,85,247,0.18)", border: "rgba(168,85,247,0.32)", label: "Purple Team" },
-  red: { primary: "#ef4444", glow: "rgba(239,68,68,0.18)", border: "rgba(239,68,68,0.32)", label: "Red Team" },
+  red: { primary: "#dc2626", glow: "rgba(220,38,38,0.18)", border: "rgba(220,38,38,0.32)", label: "Red Team" },
+  cyan: { primary: "#06b6d4", glow: "rgba(6,182,212,0.18)", border: "rgba(6,182,212,0.32)", label: "Cyan" },
+  purple: { primary: "#6d28d9", glow: "rgba(109,40,217,0.18)", border: "rgba(109,40,217,0.32)", label: "Dark Purple" },
 };

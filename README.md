@@ -1,32 +1,157 @@
-# React + TypeScript + Vite
+# Adeen Shahzad Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+A responsive React and TypeScript portfolio for Adeen Shahzad, a Purple Team security specialist focused on offensive security, web application testing, AI security automation, VAPT, DFIR, malware analysis, SOC operations, and security engineering.
 
-Currently, two official plugins are available:
+**Live site:** <https://anon-443.github.io/Portfolio/>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+**GitHub:** <https://github.com/anon-443>
 
-## React Compiler
+**LinkedIn:** <https://www.linkedin.com/in/adeen-shahzad-/>
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Portfolio highlights
 
-## Expanding the Oxlint configuration
+- Purple Team security positioning for internships, security roles, and paid project work
+- Offensive security and web application testing case studies
+- AI security automation and ML based threat detection projects
+- VAPT, malware analysis, digital forensics, SOC, and threat intelligence skills
+- Verified internship timeline with current roles marked as ongoing
+- Downloadable PDF resume
+- Live GitHub repository activity
+- Responsive navigation and mobile friendly layouts
+- Dark mode by default with red, cyan, and dark purple accent choices
+- Optional light theme
+- Accessible focus states and reduced motion support
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
+## Featured projects
 
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+- **VARE Static Malware Analysis Tool** — PE analysis, entropy scoring, YARA matching, IOC extraction, MITRE ATT&CK mapping, and PDF reporting
+- **MediConnect Secure Healthcare Platform** — secure full stack application with authentication, RBAC, audit logging, and OWASP aligned controls
+- **Secure Distributed File System with AI Monitoring** — encrypted storage, Zero Trust authentication, AI threat detection, and compliance monitoring
+- **ZTNA Self Healing Network Architecture** — dynamic trust scoring, AI assisted threat analysis, and automated enforcement
+- **SecurePipeline** — DevSecOps deployment platform with security checks integrated into delivery
+- **CyberShield SME** — permission first cybersecurity posture assessment for small businesses
+
+## Experience covered
+
+The portfolio currently includes the following resume verified roles:
+
+- AI Automation and Security Engineering Intern at THE ARZENS — Jul 2026 to Present
+- SOC Analyst Intern at Tech Biz Security — Aug 2026 to Present
+- Red Team Intern at Cyberster — Jun 2026 to Sep 2026
+- Ethical Hacking Intern at Tech Biz Security — Jul 2026 to Aug 2026
+- DevOps and Web Development Intern at TechSkillHub — Aug 2026 to Sep 2026
+- Web Development Intern at Sqrock IT Solutions — Aug 2026 to Sep 2026
+
+## Tech stack
+
+- React 19
+- TypeScript
+- Vite
+- Framer Motion
+- Lucide React
+- CSS custom properties
+- GitHub Pages deployment
+- Typst for the resume PDF
+
+## Local development
+
+```bash
+npm install
+npm run dev
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+Open the local Vite server at <http://localhost:8080>.
+
+## Production build
+
+```bash
+npm run build
+npm run lint
+```
+
+The build output is written to `dist/`.
+
+## Deployment
+
+The repository uses the `gh-pages` package and publishes the production bundle to the `gh-pages` branch.
+
+```bash
+npm run deploy
+```
+
+The Vite base path is `/Portfolio/`, which matches the GitHub Pages URL.
+
+## Content updates
+
+Most portfolio content is stored in `src/data/portfolioData.ts`.
+
+### Add an internship
+
+Add a new object to `experiences` with:
+
+- A stable `id`
+- Role and company
+- Exact month and year dates
+- A short professional summary
+- Three or four specific responsibilities
+- The tools and frameworks used
+
+Use `Present` only for a role that is still active. Do not add estimated dates or unverified claims.
+
+### Add a project
+
+Add a `Project` object with:
+
+- Project title and one line summary
+- Accurate description of the work completed
+- Architecture and threat model
+- Security features
+- Challenges and lessons learned
+- Technologies used
+- Direct GitHub repository URL
+- A category and image path
+
+Set `featured: true` for high signal projects that should appear near the top of the case studies section.
+
+### Update the resume
+
+The downloadable resume is stored at:
+
+```text
+public/Adeen_Shahzad_Resume.pdf
+```
+
+After replacing it, keep the filename unchanged or update `personalInfo.resume` in `src/data/portfolioData.ts`. Rebuild the site and test the download link.
+
+## Theme controls
+
+The default accent is red. The available accent choices are:
+
+- Red Team red
+- Cyan
+- Dark purple
+
+The light theme is optional and can be switched from the navigation bar. Theme choices are stored in local storage for the returning visitor.
+
+## Contact form
+
+The contact form is wired for Web3Forms but requires a valid Web3Forms access key. Replace the placeholder key in `src/components/Contact.tsx` before treating form submissions as production ready.
+
+## Project structure
+
+```text
+public/              Static images, favicon, and downloadable resume
+src/components/      Portfolio sections and interactive UI
+src/context/         Theme state and persistence
+src/data/            Portfolio content and theme definitions
+src/index.css        Design system, layout, responsive rules, and theme styles
+src/App.tsx          Main page composition
+index.html           SEO metadata and structured data
+```
+
+## Notes
+
+- Keep project and internship claims factual and verifiable.
+- Prefer short paragraphs and clear bullets over dense blocks of text.
+- Use direct repository links instead of linking every project to the GitHub profile.
+- Run `npm run build` and `npm run lint` before publishing changes.

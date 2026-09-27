@@ -13,10 +13,10 @@ const COMMANDS: Record<string, string> = {
   contact   — Get in touch
   clear     — Clear terminal`,
   whoami: `Adeen Shahzad
-Role: Cybersecurity Specialist | Penetration Tester
+Role: Purple Team Security Specialist | Penetration Tester
 Education: B.S. Cybersecurity @ Air University (2028)
 Location: Islamabad, Pakistan
-Focus: Ethical Hacking, Web App Security, Malware Analysis`,
+Focus: Offensive Security, Web App Security, AI Security, VAPT, DFIR`,
   skills: `Offensive: Nmap, Burp Suite, Metasploit, SQLMap, Hydra
 Defensive: Wazuh SIEM, Snort IDS, Nessus, YARA
 Frameworks: OWASP Top 10, MITRE ATT&CK, NIST 800-207

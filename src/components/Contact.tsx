@@ -115,7 +115,7 @@ export default function Contact() {
                   aria-label="Copy email address"
                   style={{
                     background: 'none', border: '1px solid var(--border)',
-                    borderRadius: 8, cursor: 'pointer', padding: '0.35rem',
+                    borderRadius: 8, cursor: 'pointer', padding: 0, minWidth: 44, minHeight: 44,
                     color: copied ? 'var(--accent)' : 'var(--text-muted)',
                     transition: 'all 0.2s', display: 'flex', alignItems: 'center',
                   }}

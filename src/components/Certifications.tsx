@@ -101,6 +101,7 @@ export default function Certifications() {
                     style={{
                       color: 'var(--text-muted)',
                       padding: '0.375rem',
+                      minWidth: 44, minHeight: 44, justifyContent: 'center',
                       borderRadius: 8,
                       border: '1px solid var(--border)',
                       display: 'flex',

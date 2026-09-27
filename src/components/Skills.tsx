@@ -69,7 +69,7 @@ export default function Skills() {
               aria-selected={activeCategory === cat}
               onClick={() => setActiveCategory(cat)}
               style={{
-                padding: '0.5rem 1.25rem',
+                padding: '0.5rem 1.25rem', minHeight: 44,
                 borderRadius: 9999,
                 border: '1px solid',
                 borderColor: activeCategory === cat ? 'var(--accent)' : 'var(--border)',

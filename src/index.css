@@ -3,15 +3,15 @@
    CSS CUSTOM PROPERTIES (DESIGN SYSTEM)
 ═══════════════════════════════════════════ */
 :root {
-  --accent: #a855f7;
-  --accent-glow: rgba(168, 85, 247, 0.18);
-  --accent-dim: rgba(168, 85, 247, 0.1);
+  --accent: #dc2626;
+  --accent-glow: rgba(220, 38, 38, 0.18);
+  --accent-dim: rgba(220, 38, 38, 0.1);
   --bg-base: #07070d;
   --bg-surface: #11101a;
   --bg-card: #171521;
   --bg-card-hover: #211d2c;
   --border: rgba(255, 255, 255, 0.06);
-  --border-accent: rgba(168, 85, 247, 0.32);
+  --border-accent: rgba(220, 38, 38, 0.32);
   --text-primary: #f1f5f9;
   --text-secondary: #94a3b8;
   --text-muted: #475569;
@@ -392,6 +392,8 @@ body {
   color: var(--text-primary);
   font-family: var(--font-mono);
   font-size: 0.85rem;
+  min-height: 44px;
+  padding: 0.5rem 0;
   flex: 1;
   caret-color: var(--accent);
 }

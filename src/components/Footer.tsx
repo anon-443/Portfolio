@@ -37,7 +37,7 @@ export default function Footer() {
               Adeen Shahzad
             </div>
             <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', lineHeight: 1.7, maxWidth: 280, marginBottom: '1.25rem' }}>
-              Cybersecurity Specialist. Penetration Tester. Security Researcher.
+              Purple Team Security. Penetration Testing. AI Security. DFIR.
               Air University, Islamabad.
             </p>
             <div style={{ display: 'flex', gap: '0.625rem' }}>
@@ -55,7 +55,7 @@ export default function Footer() {
                   aria-label={s.label}
                   style={{
                     display: 'flex', alignItems: 'center', justifyContent: 'center',
-                    width: 36, height: 36, borderRadius: 9,
+                    width: 44, height: 44, borderRadius: 9,
                     background: 'rgba(255,255,255,0.04)',
                     border: '1px solid var(--border)',
                     color: 'var(--text-secondary)',

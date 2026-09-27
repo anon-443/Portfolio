@@ -210,7 +210,7 @@ export default function GitHubSection() {
                         {repo.name}
                       </a>
                     </div>
-                    <a href={repo.html_url} target="_blank" rel="noopener noreferrer" aria-label="Open repository" style={{ color: 'var(--text-muted)' }}>
+                    <a href={repo.html_url} target="_blank" rel="noopener noreferrer" aria-label="Open repository" style={{ color: 'var(--text-muted)', width: 44, height: 44, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                       <ExternalLink size={14} />
                     </a>
                   </div>

@@ -12,16 +12,16 @@ interface ThemeContextValue {
 }
 
 const ThemeContext = createContext<ThemeContextValue>({
-  accent: 'purple',
+  accent: 'red',
   setAccent: () => {},
   mode: 'dark',
   setMode: () => {},
-  accentColor: '#a855f7',
-  accentGlow: 'rgba(168,85,247,0.18)',
+  accentColor: '#dc2626',
+  accentGlow: 'rgba(220,38,38,0.18)',
 });
 
 export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [accent, setAccentState] = useState<AccentColor>('purple');
+  const [accent, setAccentState] = useState<AccentColor>('red');
   const [mode, setModeState] = useState<ThemeMode>('dark');
 
   const applyTheme = (nextAccent: AccentColor, nextMode: ThemeMode) => {
@@ -35,7 +35,7 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
 
   const setAccent = (next: AccentColor) => {
     setAccentState(next);
-    localStorage.setItem('portfolio-accent', next);
+    localStorage.setItem('portfolio-accent-v2', next);
     applyTheme(next, mode);
   };
 
@@ -46,11 +46,11 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
   };
 
   useEffect(() => {
-    const savedAccent = (localStorage.getItem('portfolio-accent') as AccentColor | null) || 'purple';
+    const savedAccent = (localStorage.getItem('portfolio-accent-v2') as AccentColor | null) || 'red';
     const savedMode = (localStorage.getItem('portfolio-mode') as ThemeMode | null) || 'dark';
-    setAccentState(savedAccent in accentColors ? savedAccent : 'purple');
+    setAccentState(savedAccent in accentColors ? savedAccent : 'red');
     setModeState(savedMode === 'light' ? 'light' : 'dark');
-    applyTheme(savedAccent in accentColors ? savedAccent : 'purple', savedMode === 'light' ? 'light' : 'dark');
+    applyTheme(savedAccent in accentColors ? savedAccent : 'red', savedMode === 'light' ? 'light' : 'dark');
   }, []);
 
   return <ThemeContext.Provider value={{ accent, setAccent, mode, setMode, accentColor: accentColors[accent].primary, accentGlow: accentColors[accent].glow }}>{children}</ThemeContext.Provider>;

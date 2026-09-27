@@ -18,14 +18,14 @@ function CyberHUD() {
             cx="200" cy="200" r={r}
             fill="none"
             stroke="var(--accent)"
-            strokeWidth="0.8"
+            strokeWidth="1.5"
             strokeOpacity={0.15 + i * 0.05}
           />
         ))}
 
         {/* Cross-hairs */}
-        <line x1="200" y1="40" x2="200" y2="360" stroke="var(--accent)" strokeWidth="0.5" strokeOpacity="0.1" />
-        <line x1="40" y1="200" x2="360" y2="200" stroke="var(--accent)" strokeWidth="0.5" strokeOpacity="0.1" />
+        <line x1="200" y1="40" x2="200" y2="360" stroke="var(--accent)" strokeWidth="1" strokeOpacity="0.18" />
+        <line x1="40" y1="200" x2="360" y2="200" stroke="var(--accent)" strokeWidth="1" strokeOpacity="0.18" />
 
         {/* Scanning arc */}
         <motion.g
@@ -60,15 +60,15 @@ function CyberHUD() {
         ].map(node => (
           <motion.g key={node.label}>
             <motion.circle
-              cx={node.cx} cy={node.cy} r={5}
+              cx={node.cx} cy={node.cy} r={7}
               fill="var(--accent)"
-              animate={{ opacity: [0.4, 1, 0.4], r: [4, 6, 4] }}
+              animate={{ opacity: [0.55, 1, 0.55], r: [6, 9, 6] }}
               transition={{ repeat: Infinity, duration: 2 + node.pulse * 0.5, ease: 'easeInOut', delay: node.pulse * 0.4 }}
             />
             <text
               x={node.cx} y={node.cy - 12}
               textAnchor="middle"
-              fontSize="8"
+              fontSize="10"
               fill="var(--accent)"
               fontFamily="var(--font-mono)"
               opacity="0.7"
@@ -79,11 +79,11 @@ function CyberHUD() {
         ))}
 
         {/* Center */}
-        <motion.circle cx="200" cy="200" r="8" fill="var(--accent)"
-          animate={{ r: [7, 10, 7], opacity: [0.8, 1, 0.8] }}
+        <motion.circle cx="200" cy="200" r="12" fill="var(--accent)"
+          animate={{ r: [10, 14, 10], opacity: [0.85, 1, 0.85] }}
           transition={{ repeat: Infinity, duration: 2, ease: 'easeInOut' }}
         />
-        <text x="200" y="230" textAnchor="middle" fontSize="9" fill="var(--text-muted)" fontFamily="var(--font-mono)">
+        <text x="200" y="230" textAnchor="middle" fontSize="11" fill="var(--text-muted)" fontFamily="var(--font-mono)">
           TARGET ACQUIRED
         </text>
       </svg>
@@ -167,12 +167,12 @@ export default function Hero() {
       <div className="container" style={{ position: 'relative', zIndex: 2 }}>
         <div style={{
           display: 'grid',
-          gridTemplateColumns: '1fr 1fr',
+          gridTemplateColumns: 'minmax(0, 1fr) minmax(0, 1fr)',
           gap: '4rem',
           alignItems: 'center',
         }}>
           {/* Left: Text content */}
-          <div>
+          <div style={{ minWidth: 0 }}>
             {/* Badge */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -198,6 +198,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
+              className="hero-greeting"
               style={{
                 fontFamily: 'var(--font-display)',
                 fontWeight: 800,
@@ -220,6 +221,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
+              className="hero-role"
               style={{
                 fontFamily: 'var(--font-mono)',
                 fontSize: 'clamp(1.25rem, 2.8vw, 1.85rem)',
@@ -239,6 +241,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.3 }}
+              className="hero-tagline"
               style={{
                 fontSize: 'clamp(1.1rem, 1.5vw, 1.3rem)',
                 color: 'var(--text-secondary)',
@@ -252,6 +255,7 @@ export default function Hero() {
 
             {/* CTAs */}
             <motion.div
+              className="hero-ctas"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.4 }}
@@ -316,6 +320,7 @@ export default function Hero() {
 
           {/* Right: HUD graphic */}
           <motion.div
+            className="hero-hud"
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.7, delay: 0.2 }}
@@ -354,9 +359,18 @@ export default function Hero() {
             grid-template-columns: 1fr !important;
           }
           #hero > div > div > div:last-child {
-            max-width: 300px;
+            width: min(100%, 320px);
+            max-width: 320px;
             margin: 0 auto;
           }
+        }
+        @media (max-width: 600px) {
+          .hero-greeting { white-space: normal !important; overflow-wrap: anywhere; }
+          .hero-role { font-size: clamp(1.05rem, 5.5vw, 1.45rem) !important; white-space: normal; overflow-wrap: anywhere; }
+          .hero-tagline { max-width: 100% !important; }
+          .hero-ctas { flex-wrap: wrap !important; }
+          .hero-ctas .btn { width: 100%; justify-content: center; }
+          .hero-hud { margin-top: 0.5rem; }
         }
       `}</style>
     </section>

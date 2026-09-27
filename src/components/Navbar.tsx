@@ -139,22 +139,25 @@ export default function Navbar() {
                   aria-label={`${accentColors[c].label} accent`}
                   aria-pressed={accent === c}
                   style={{
-                    width: 22, height: 22, borderRadius: '50%',
-                    background: accentColors[c].primary,
-                    border: accent === c ? `3px solid #fff` : '2px solid transparent',
+                    width: 44, height: 44, borderRadius: 10,
+                    background: 'transparent',
+                    border: accent === c ? '1px solid var(--border-accent)' : '1px solid transparent',
                     cursor: 'pointer',
                     outline: 'none',
                     padding: 0,
+                    display: 'flex', alignItems: 'center', justifyContent: 'center',
                     transition: 'transform 0.2s, border-color 0.2s',
-                    transform: accent === c ? 'scale(1.2)' : 'scale(1)',
+                    transform: accent === c ? 'scale(1.05)' : 'scale(1)',
                   }}
-                />
+                >
+                  <span style={{ width: 25, height: 25, borderRadius: '50%', background: accentColors[c].primary, display: 'block', boxShadow: `0 0 12px ${accentColors[c].glow}` }} />
+                </button>
               ))}
               <button
                 onClick={() => setMode(mode === 'dark' ? 'light' : 'dark')}
                 title={mode === 'dark' ? 'Switch to light theme' : 'Switch to dark theme'}
                 aria-label={mode === 'dark' ? 'Switch to light theme' : 'Switch to dark theme'}
-                style={{ background: 'var(--accent-dim)', border: '1px solid var(--border-accent)', color: 'var(--accent)', borderRadius: 8, padding: '0.35rem', cursor: 'pointer', display: 'flex' }}
+                style={{ background: 'var(--accent-dim)', border: '1px solid var(--border-accent)', color: 'var(--accent)', borderRadius: 8, padding: 0, cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', minWidth: 44, minHeight: 44 }}
               >
                 {mode === 'dark' ? <Sun size={19} /> : <Moon size={19} />}
               </button>
@@ -163,7 +166,7 @@ export default function Navbar() {
             {/* Mobile burger */}
             <button
               onClick={() => setMobileOpen(v => !v)}
-              style={{ background: 'none', border: 'none', cursor: 'pointer', color: 'var(--text-primary)', padding: '0.25rem' }}
+              style={{ background: 'none', border: 'none', cursor: 'pointer', color: 'var(--text-primary)', padding: 0, minWidth: 48, minHeight: 48, display: 'flex', alignItems: 'center', justifyContent: 'center' }}
               aria-label={mobileOpen ? 'Close navigation' : 'Open navigation'}
               aria-expanded={mobileOpen}
               className="mobile-burger"
@@ -193,6 +196,19 @@ export default function Navbar() {
             role="dialog"
             aria-label="Mobile navigation menu"
           >
+            <button
+              onClick={() => setMobileOpen(false)}
+              className="mobile-drawer-close"
+              aria-label="Close navigation"
+              style={{
+                position: 'absolute', top: '1rem', right: '1rem',
+                width: 48, height: 48, display: 'flex', alignItems: 'center', justifyContent: 'center',
+                background: 'var(--accent-dim)', border: '1px solid var(--border-accent)',
+                borderRadius: 10, color: 'var(--accent)', cursor: 'pointer',
+              }}
+            >
+              <X size={25} />
+            </button>
             <nav style={{ display: 'flex', flexDirection: 'column', gap: '0.25rem' }}>
               {NAV_LINKS.map(link => (
                 <button
@@ -202,6 +218,7 @@ export default function Navbar() {
                     background: activeSection === link.href.slice(1) ? 'var(--accent-dim)' : 'none',
                     border: 'none', cursor: 'pointer',
                     padding: '0.875rem 1rem',
+                    minHeight: 48,
                     borderRadius: 8,
                     fontSize: '0.9375rem',
                     fontWeight: 500,
