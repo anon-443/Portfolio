@@ -9,8 +9,8 @@ const ROLES = personalInfo.roles;
 // Animated radar/HUD graphic
 function CyberHUD() {
   return (
-    <div style={{ position: 'relative', width: '100%', maxWidth: 420, aspectRatio: '1', margin: '0 auto' }}>
-      <svg viewBox="0 0 400 400" style={{ width: '100%', height: '100%' }}>
+    <div style={{ position: 'relative', width: '100%', maxWidth: 460, aspectRatio: '1', margin: '0 auto' }}>
+      <svg className="cyber-icon" viewBox="0 0 400 400" style={{ width: '100%', height: '100%' }}>
         {/* Concentric rings */}
         {[160, 120, 80, 40].map((r, i) => (
           <circle
@@ -18,7 +18,7 @@ function CyberHUD() {
             cx="200" cy="200" r={r}
             fill="none"
             stroke="var(--accent)"
-            strokeWidth="1.5"
+            strokeWidth="2.5"
             strokeOpacity={0.15 + i * 0.05}
           />
         ))}
@@ -39,7 +39,7 @@ function CyberHUD() {
             strokeWidth="0"
             opacity="0.3"
           />
-          <line x1="200" y1="200" x2="200" y2="40" stroke="var(--accent)" strokeWidth="1.5" strokeOpacity="0.8" />
+          <line x1="200" y1="200" x2="200" y2="40" stroke="var(--accent)" strokeWidth="2.5" strokeOpacity="0.8" />
         </motion.g>
 
         {/* Gradient for scan */}
@@ -164,6 +164,7 @@ export default function Hero() {
         zIndex: 0,
       }} aria-hidden="true" />
 
+      <div className="cyber-scanline" aria-hidden="true" />
       <div className="container" style={{ position: 'relative', zIndex: 2 }}>
         <div style={{
           display: 'grid',
@@ -187,7 +188,7 @@ export default function Hero() {
                 marginBottom: '1.5rem',
               }}
             >
-              <Shield size={24} color="var(--accent)" strokeWidth={3.25} />
+              <Shield className="cyber-icon" size={30} color="var(--accent)" strokeWidth={4} />
               <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.9rem', color: 'var(--accent)', letterSpacing: '0.1em' }}>
                 PURPLE TEAM SECURITY
               </span>
@@ -202,12 +203,12 @@ export default function Hero() {
               style={{
                 fontFamily: 'var(--font-display)',
                 fontWeight: 800,
-                fontSize: 'clamp(2.15rem, 5vw, 4.6rem)',
+                fontSize: 'clamp(2.05rem, 5vw, 4.4rem)',
                 lineHeight: 1.1,
                 letterSpacing: '-0.03em',
                 marginBottom: '0.75rem',
                 color: 'var(--text-primary)',
-                whiteSpace: 'nowrap',
+                whiteSpace: 'normal',
               }}
             >
               Hi, I'm{' '}
@@ -259,7 +260,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.4 }}
-              style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '3rem', flexWrap: 'nowrap' }}
+              style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '2.25rem', flexWrap: 'wrap' }}
             >
               <button className="btn btn-primary" onClick={scrollToProjects} style={{ whiteSpace: 'nowrap' }}>
                 View Projects <ChevronRight size={20} />
@@ -280,9 +281,9 @@ export default function Hero() {
               style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}
             >
               {[
-                { icon: <Github size={25} />, href: personalInfo.github, label: 'GitHub' },
-                { icon: <Linkedin size={25} />, href: personalInfo.linkedin, label: 'LinkedIn' },
-                { icon: <ExternalLink size={23} />, href: personalInfo.tryhackme, label: 'TryHackMe' },
+                { icon: <Github size={29} strokeWidth={3.2} />, href: personalInfo.github, label: 'GitHub' },
+                { icon: <Linkedin size={29} strokeWidth={3.2} />, href: personalInfo.linkedin, label: 'LinkedIn' },
+                { icon: <ExternalLink size={27} strokeWidth={3.2} />, href: personalInfo.tryhackme, label: 'TryHackMe' },
               ].map(social => (
                 <a
                   key={social.label}

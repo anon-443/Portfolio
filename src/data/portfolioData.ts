@@ -811,7 +811,7 @@ export const labSetup = {
 export type AccentColor = "red" | "cyan" | "purple";
 
 export const accentColors: Record<AccentColor, { primary: string; glow: string; border: string; label: string }> = {
-  red: { primary: "#7f1d32", glow: "rgba(127,29,50,0.24)", border: "rgba(159,55,75,0.42)", label: "Burgundy Red" },
+  red: { primary: "#e11d48", glow: "rgba(225,29,72,0.28)", border: "rgba(244,63,94,0.48)", label: "Crimson Red" },
   cyan: { primary: "#06b6d4", glow: "rgba(6,182,212,0.18)", border: "rgba(6,182,212,0.32)", label: "Cyan" },
   purple: { primary: "#4b2a68", glow: "rgba(75,42,104,0.24)", border: "rgba(110,69,142,0.42)", label: "Dark Purple" },
 };

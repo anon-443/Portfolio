@@ -11,7 +11,7 @@ export const Github: React.FC<IconProps> = ({ size = 24, style, ...props }) => (
     viewBox="0 0 24 24"
     fill="none"
     stroke="currentColor"
-    strokeWidth="2"
+    strokeWidth="3"
     strokeLinecap="round"
     strokeLinejoin="round"
     style={style}
@@ -29,7 +29,7 @@ export const Linkedin: React.FC<IconProps> = ({ size = 24, style, ...props }) =>
     viewBox="0 0 24 24"
     fill="none"
     stroke="currentColor"
-    strokeWidth="2"
+    strokeWidth="3"
     strokeLinecap="round"
     strokeLinejoin="round"
     style={style}

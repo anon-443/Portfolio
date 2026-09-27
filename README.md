@@ -132,7 +132,7 @@ After replacing it, keep the filename unchanged or update `personalInfo.resume` 
 
 The default accent is red. The available accent choices are:
 
-- Burgundy red
+- Bright crimson red
 - Cyan
 - Dark purple
 

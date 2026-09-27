@@ -88,7 +88,7 @@ export default function Navbar() {
               display: 'flex', alignItems: 'center', justifyContent: 'center',
               boxShadow: '0 0 16px var(--accent-glow)',
             }}>
-              <Shield size={30} color="#fff" strokeWidth={3.5} />
+              <Shield className="cyber-icon" size={34} color="#fff" strokeWidth={4.5} />
             </div>
             <span style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '1.2rem', color: 'var(--text-primary)' }}>
               Adeen Shahzad

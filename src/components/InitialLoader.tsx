@@ -61,7 +61,7 @@ export default function InitialLoader({ onDone }: { onDone: () => void }) {
                 margin: '0 auto 1rem',
                 boxShadow: '0 0 40px var(--accent-glow)',
               }}>
-                <Shield size={38} color="#fff" strokeWidth={3.5} />
+                <Shield className="cyber-icon" size={42} color="#fff" strokeWidth={4.5} />
               </div>
               <div style={{
                 fontFamily: 'var(--font-mono)',
