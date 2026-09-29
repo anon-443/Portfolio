@@ -16,17 +16,19 @@ export default function InitialLoader({ onDone }: { onDone: () => void }) {
   const [done, setDone] = useState(false);
 
   useEffect(() => {
+    const timers: ReturnType<typeof setTimeout>[] = [];
     BOOT_LINES.forEach((line, i) => {
-      setTimeout(() => {
-        setVisible(v => [...v, i]);
+      timers.push(setTimeout(() => {
+        setVisible(v => v.includes(i) ? v : [...v, i]);
         if (i === BOOT_LINES.length - 1) {
-          setTimeout(() => {
+          timers.push(setTimeout(() => {
             setDone(true);
-            setTimeout(onDone, 600);
-          }, 500);
+            timers.push(setTimeout(onDone, 600));
+          }, 500));
         }
-      }, line.delay);
+      }, line.delay));
     });
+    return () => timers.forEach(clearTimeout);
   }, [onDone]);
 
   return (
@@ -126,7 +128,7 @@ export default function InitialLoader({ onDone }: { onDone: () => void }) {
                 color: 'var(--text-muted)',
               }}>
                 <span>SYSTEM BOOT</span>
-                <span>{Math.round((visible.length / BOOT_LINES.length) * 100)}%</span>
+                <span>{Math.min(100, Math.round((visible.length / BOOT_LINES.length) * 100))}%</span>
               </div>
             </div>
           </div>

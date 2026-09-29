@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { projects, type Project } from '../data/portfolioData';
-import { ExternalLink, X, ChevronRight, Shield, Code2, Cpu, AlertTriangle } from 'lucide-react';
+import { Activity, AlertTriangle, Brain, ChevronRight, Code2, Cpu, Crosshair, Database, ExternalLink, FileSearch, HeartPulse, LockKeyhole, Monitor, Network, Shield, ShieldCheck, Trophy, X } from 'lucide-react';
+import type { LucideIcon } from 'lucide-react';
 import { Github } from './BrandIcons';
 
 const CATEGORIES = ['All', 'Malware Analysis', 'Web Security', 'Network Security', 'Offensive Security', 'Software Engineering'];
@@ -14,19 +15,26 @@ const fadeUp = {
   }),
 };
 
-// Project emoji mapping
-const PROJECT_ICONS: Record<string, string> = {
-  vare: '🔬',
-  mediconnect: '🏥',
-  sdfs: '🔐',
-  netlab: '🕸️',
-  rdc: '💻',
-  'ctf-scheduler': '🏆',
-  'vgg-16': '🧠',
-  'ztna-self-healing': '🛡️',
-  securepipeline: '⚙️',
-  'cybershield-sme': '🧭',
+const PROJECT_ICONS: Record<string, LucideIcon> = {
+  'ai-security-automation-platform': ShieldCheck,
+  'soar-anomaly-detection': Activity,
+  securedocs: LockKeyhole,
+  vare: FileSearch,
+  mediconnect: HeartPulse,
+  sdfs: Database,
+  netlab: Network,
+  rdc: Monitor,
+  'ctf-scheduler': Trophy,
+  'vgg-16': Brain,
+  'ztna-self-healing': ShieldCheck,
+  securepipeline: Code2,
+  'cybershield-sme': Shield,
 };
+
+function ProjectIcon({ projectId, size = 25 }: { projectId: string; size?: number }) {
+  const Icon = PROJECT_ICONS[projectId] || Crosshair;
+  return <Icon size={size} strokeWidth={2.35} aria-hidden="true" />;
+}
 
 function ProjectModal({ project, onClose }: { project: Project; onClose: () => void }) {
   return (
@@ -68,7 +76,7 @@ function ProjectModal({ project, onClose }: { project: Project; onClose: () => v
         }}>
           <div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '0.5rem' }}>
-              <span style={{ fontSize: '1.75rem' }}>{PROJECT_ICONS[project.id] || '🔒'}</span>
+              <span className="project-modal-icon"><ProjectIcon projectId={project.id} size={27} /></span>
               <div>
                 <h3 style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '1.25rem', color: 'var(--text-primary)' }}>
                   {project.title}
@@ -217,6 +225,7 @@ export default function Projects() {
 
         {/* Filter tabs */}
         <motion.div
+          className="project-filters"
           initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.3 }}
           style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', justifyContent: 'center', marginBottom: '3rem' }}
         >
@@ -240,14 +249,15 @@ export default function Projects() {
         </motion.div>
 
         {/* Projects grid */}
-        <div style={{
+        <div className="project-grid" style={{
           display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fill, minmax(340px, 1fr))',
+          gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 320px), 1fr))',
           gap: '1.25rem',
         }}>
           {filtered.map((project, i) => (
             <motion.article
               key={project.id}
+              className="project-card"
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, margin: '-40px' }}
@@ -265,56 +275,46 @@ export default function Projects() {
               whileHover={{ y: -5, borderColor: 'var(--border-accent)', boxShadow: '0 16px 48px rgba(0,0,0,0.5), 0 0 30px var(--accent-glow)' }}
               onClick={() => setSelectedProject(project)}
             >
-              {/* Card header */}
-              <div style={{
-                padding: '1.5rem',
-                background: 'linear-gradient(135deg, rgba(6,182,212,0.06) 0%, transparent 60%)',
-                borderBottom: '1px solid var(--border)',
-                display: 'flex', alignItems: 'center', gap: '0.875rem',
-              }}>
-                <div style={{
-                  width: 48, height: 48, borderRadius: 12,
-                  background: 'var(--accent-dim)',
-                  border: '1px solid var(--border-accent)',
-                  display: 'flex', alignItems: 'center', justifyContent: 'center',
-                  fontSize: '1.375rem', flexShrink: 0,
-                }}>
-                  {PROJECT_ICONS[project.id] || '🔒'}
-                </div>
+              <div className="project-cover">
+                <img src={project.image} alt="" loading="lazy" />
+                <div className="project-cover-shade" aria-hidden="true" />
+                <span className="project-category-pill"><ProjectIcon projectId={project.id} size={17} />{project.category}</span>
+              </div>
+
+              <div className="project-card-head">
+                <span className="project-icon-tile"><ProjectIcon projectId={project.id} size={29} /></span>
                 <div>
-                  <h3 style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '1rem', color: 'var(--text-primary)', lineHeight: 1.3 }}>
+                  <h3 style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '1.2rem', color: 'var(--text-primary)', lineHeight: 1.3 }}>
                     {project.title}
                   </h3>
-                  <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.7rem', color: 'var(--accent)', marginTop: '0.1rem', display: 'block' }}>
-                    {project.category}
-                  </span>
                 </div>
+                <span className="project-view-cue" aria-hidden="true"><ChevronRight size={22} /></span>
               </div>
 
               {/* Card body */}
-              <div style={{ padding: '1.25rem', flex: 1, display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-                <p style={{ color: 'var(--text-secondary)', fontSize: '0.875rem', lineHeight: 1.7 }}>
+              <div className="project-card-body" style={{ padding: '1.25rem', flex: 1, display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+                <p style={{ color: 'var(--text-secondary)', fontSize: '1rem', lineHeight: 1.7 }}>
                   {project.tagline}
                 </p>
                 <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.4rem' }}>
                   {project.techStack.slice(0, 4).map(t => (
-                    <span key={t} className="tag-chip" style={{ fontSize: '0.72rem' }}>{t}</span>
+                    <span key={t} className="tag-chip project-tag">{t}</span>
                   ))}
                   {project.techStack.length > 4 && (
-                    <span className="tag-chip" style={{ fontSize: '0.72rem' }}>+{project.techStack.length - 4}</span>
+                    <span className="tag-chip project-tag">+{project.techStack.length - 4}</span>
                   )}
                 </div>
               </div>
 
               {/* Card footer */}
-              <div style={{ padding: '1rem 1.25rem', borderTop: '1px solid var(--border)', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                <span style={{ color: 'var(--accent)', fontSize: '0.8rem', fontFamily: 'var(--font-mono)' }}>
-                  Click for case study →
+              <div className="project-card-footer" style={{ padding: '1rem 1.25rem', borderTop: '1px solid var(--border)', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                <span style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', fontFamily: 'var(--font-mono)' }}>
+                  Open case study
                 </span>
                 <div style={{ display: 'flex', gap: '0.5rem' }} onClick={e => e.stopPropagation()}>
                   {project.githubUrl && (
                     <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" aria-label="GitHub" style={{ color: 'var(--text-muted)', transition: 'color 0.2s', width: 44, height: 44, display: 'flex', alignItems: 'center', justifyContent: 'center' }} onMouseEnter={e => (e.currentTarget.style.color = 'var(--accent)')} onMouseLeave={e => (e.currentTarget.style.color = 'var(--text-muted)')}>
-                      <Github size={16} />
+                      <Github size={22} />
                     </a>
                   )}
                 </div>

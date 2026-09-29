@@ -105,8 +105,8 @@ export default function Navbar() {
                   background: 'none', border: 'none', cursor: 'pointer',
                   padding: '0.6rem 0.85rem',
                   borderRadius: 8,
-                  fontSize: '1rem',
-                  fontWeight: 500,
+                  fontSize: '1.03rem',
+                  fontWeight: 700,
                   color: activeSection === link.href.slice(1) ? 'var(--accent)' : 'var(--text-secondary)',
                   transition: 'color 0.2s, background 0.2s',
                   fontFamily: 'var(--font-sans)',
@@ -159,7 +159,7 @@ export default function Navbar() {
                 aria-label={mode === 'dark' ? 'Switch to light theme' : 'Switch to dark theme'}
                 style={{ background: 'var(--accent-dim)', border: '1px solid var(--border-accent)', color: 'var(--accent)', borderRadius: 8, padding: 0, cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', minWidth: 44, minHeight: 44 }}
               >
-                {mode === 'dark' ? <Sun size={19} /> : <Moon size={19} />}
+                {mode === 'dark' ? <Sun size={22} /> : <Moon size={22} />}
               </button>
             </div>
 
@@ -220,8 +220,8 @@ export default function Navbar() {
                     padding: '0.875rem 1rem',
                     minHeight: 48,
                     borderRadius: 8,
-                    fontSize: '0.9375rem',
-                    fontWeight: 500,
+                    fontSize: '1rem',
+                    fontWeight: 700,
                     color: activeSection === link.href.slice(1) ? 'var(--accent)' : 'var(--text-secondary)',
                     textAlign: 'left',
                     display: 'flex', alignItems: 'center', justifyContent: 'space-between',

@@ -57,6 +57,7 @@ export default function Skills() {
 
         {/* Category filters */}
         <motion.div
+          className="skill-filters"
           initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={3}
           style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', justifyContent: 'center', marginBottom: '3rem' }}
           role="tablist"
@@ -99,6 +100,7 @@ export default function Skills() {
           {filtered.map((skill, i) => (
             <motion.div
               key={skill.name}
+              className="skill-card"
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, margin: '-40px' }}
@@ -115,15 +117,15 @@ export default function Skills() {
             >
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
                 <div>
-                  <div style={{ fontSize: '1.5rem', marginBottom: '0.375rem' }}>{skill.icon}</div>
-                  <div style={{ fontWeight: 600, fontSize: '0.9375rem', color: 'var(--text-primary)' }}>
+                  <div className="skill-icon-wrap">{skill.icon}</div>
+                  <div className="skill-name">
                     {skill.name}
                   </div>
-                  <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.7rem', color: 'var(--text-muted)', marginTop: '0.125rem', textTransform: 'capitalize' }}>
+                  <div className="skill-category">
                     {skill.category}
                   </div>
                 </div>
-                <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.8rem', color: 'var(--accent)', fontWeight: 600 }}>
+                <div className="skill-percent">
                   {skill.proficiency}%
                 </div>
               </div>

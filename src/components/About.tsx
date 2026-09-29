@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { personalInfo } from '../data/portfolioData';
-import { MapPin, GraduationCap, ExternalLink } from 'lucide-react';
+import { MapPin, GraduationCap, ExternalLink, ShieldCheck } from 'lucide-react';
 import { Github, Linkedin } from './BrandIcons';
 
 const COMMANDS: Record<string, string> = {
@@ -153,8 +153,8 @@ export default function About() {
               style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', marginBottom: '2rem' }}
             >
               {[
-                { icon: <GraduationCap size={16} />, text: `${personalInfo.degree} @ ${personalInfo.university}` },
-                { icon: <MapPin size={16} />, text: personalInfo.location },
+                { icon: <GraduationCap size={20} />, text: `${personalInfo.degree} @ ${personalInfo.university}` },
+                { icon: <MapPin size={20} />, text: personalInfo.location },
                 { icon: <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.85rem' }}>📅</span>, text: `Graduating ${personalInfo.graduationYear}` },
               ].map(item => (
                 <div key={item.text} style={{
@@ -247,8 +247,8 @@ export default function About() {
               position: 'relative',
             }}>
               <img
-                src="/Portfolio/images/hooded_shadow_a.png"
-                alt="Faceless hooded cybersecurity silhouette in a security operations center"
+                src="/Portfolio/images/about_profile.png"
+                alt="Cybersecurity analyst reviewing network activity in an operations center"
                 style={{ width: '100%', height: 260, objectFit: 'cover', objectPosition: 'center', display: 'block' }}
               />
               <div style={{
@@ -262,13 +262,11 @@ export default function About() {
               }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
                   <div className="status-dot" />
-                  <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.75rem', color: 'var(--accent)' }}>
-                    PURPLE TEAM SECURITY // OFFENSE + DEFENSE
+                  <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.82rem', fontWeight: 700, color: '#f8fafc' }}>
+                    SECURITY OPERATIONS // OFFENSE + DEFENSE
                   </span>
                 </div>
-                <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.7rem', color: 'var(--text-muted)' }}>
-                  ONLINE
-                </span>
+                <ShieldCheck size={20} color="var(--accent)" aria-hidden="true" />
               </div>
             </div>
 

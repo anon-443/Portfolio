@@ -27,7 +27,7 @@ export default function Experience() {
         </div>
 
         {/* Timeline */}
-        <div style={{ position: 'relative', maxWidth: 800, margin: '0 auto' }}>
+        <div className="experience-timeline" style={{ position: 'relative', maxWidth: 800, margin: '0 auto' }}>
           {/* Vertical line */}
           <div style={{
             position: 'absolute',
@@ -38,10 +38,11 @@ export default function Experience() {
             opacity: 0.25,
           }} aria-hidden="true" />
 
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
+          <div className="experience-list" style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
             {experiences.map((exp, i) => (
               <motion.article
                 key={exp.id}
+                className="experience-item"
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true, margin: '-40px' }}
@@ -52,6 +53,7 @@ export default function Experience() {
                 {/* Timeline dot */}
                 <div style={{ position: 'relative', flexShrink: 0 }}>
                   <motion.div
+                    className="experience-node"
                     style={{
                       width: 48, height: 48,
                       borderRadius: '50%',
@@ -71,6 +73,7 @@ export default function Experience() {
 
                 {/* Content */}
                 <motion.div
+                  className="experience-card"
                   style={{
                     flex: 1,
                     background: 'var(--bg-card)',
@@ -84,29 +87,29 @@ export default function Experience() {
                 >
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '0.75rem' }}>
                     <div>
-                      <h3 style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '1.0625rem', color: 'var(--text-primary)' }}>
+                      <h3 className="experience-title" style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '1.2rem', color: 'var(--text-primary)' }}>
                         {exp.role}
                       </h3>
-                      <p style={{ color: 'var(--accent)', fontWeight: 600, fontSize: '0.9375rem' }}>
+                      <p className="experience-company" style={{ color: 'var(--accent)', fontWeight: 800, fontSize: '1.05rem' }}>
                         {exp.company}
                       </p>
                     </div>
                     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: '0.25rem' }}>
                       <span className="tag-chip">{exp.type}</span>
-                      <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.75rem', color: 'var(--text-muted)' }}>
+                      <span className="experience-meta" style={{ fontFamily: 'var(--font-mono)', fontSize: '0.88rem', color: 'var(--text-secondary)' }}>
                         {exp.period}
                       </span>
                     </div>
                   </div>
 
-                  <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', lineHeight: 1.7, marginBottom: '1rem' }}>
+                  <p className="experience-description" style={{ color: 'var(--text-secondary)', fontSize: '1rem', lineHeight: 1.7, marginBottom: '1rem' }}>
                     {exp.description}
                   </p>
 
                   {/* Responsibilities */}
                   <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.4rem', marginBottom: '1rem' }}>
                     {exp.responsibilities.map(r => (
-                      <li key={r} style={{ display: 'flex', gap: '0.5rem', color: 'var(--text-secondary)', fontSize: '0.875rem' }}>
+                      <li key={r} className="experience-responsibility" style={{ display: 'flex', gap: '0.5rem', color: 'var(--text-secondary)', fontSize: '0.96rem' }}>
                         <span style={{ color: 'var(--accent)', flexShrink: 0, marginTop: 1 }}>▸</span>
                         {r}
                       </li>
