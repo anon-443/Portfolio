@@ -14,7 +14,7 @@ A responsive React and TypeScript portfolio for Adeen Shahzad, a Purple Team sec
 - Offensive security and web application testing case studies
 - AI security automation and ML based threat detection projects
 - VAPT, malware analysis, digital forensics, SOC, and threat intelligence skills
-- Verified internship timeline with current roles marked as ongoing
+- Verified internship timeline with current and completed roles clearly marked
 - Downloadable PDF resume
 - Live GitHub repository activity
 - Responsive navigation and mobile friendly layouts
@@ -37,8 +37,8 @@ A responsive React and TypeScript portfolio for Adeen Shahzad, a Purple Team sec
 
 The portfolio currently includes the following resume verified roles:
 
-- AI Automation and Security Engineering Intern at THE ARZENS — Jul 2026 to Present
-- SOC Analyst Intern at Tech Biz Security — Aug 2026 to Present
+- AI Automation and Security Engineering Intern at THE ARZENS — Jul 2026 to Sep 2026 (completed)
+- SOC Analyst Intern at Tech Biz Security — Aug 2026 to Sep 2026 (completed)
 - Red Team Intern at Cyberster — Jun 2026 to Sep 2026
 - Ethical Hacking Intern at Tech Biz Security — Jul 2026 to Aug 2026
 - DevOps and Web Development Intern at TechSkillHub — Aug 2026 to Sep 2026

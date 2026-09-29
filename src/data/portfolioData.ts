@@ -511,8 +511,8 @@ export const experiences: Experience[] = [
     id: "arzens",
     role: "AI, Automation & Security Engineering Intern",
     company: "THE ARZENS",
-    type: "Internship · Ongoing",
-    period: "Jul 2026 – Present",
+    type: "Internship · Completed",
+    period: "Jul 2026 – Sep 2026",
     description:
       "Building AI-assisted security pipelines and ML-based intrusion detection systems for real-time threat analysis and automated risk classification.",
     responsibilities: [
@@ -527,8 +527,8 @@ export const experiences: Experience[] = [
     id: "techbiz-soc",
     role: "SOC Analyst Intern",
     company: "Tech Biz Security",
-    type: "Internship · Ongoing",
-    period: "Aug 2026 – Present",
+    type: "Internship · Completed",
+    period: "Aug 2026 – Sep 2026",
     description:
       "Monitoring security events, supporting incident triage, and automating repetitive SOC workflows with Python.",
     responsibilities: [
