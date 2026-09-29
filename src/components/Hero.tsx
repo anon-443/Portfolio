@@ -18,8 +18,8 @@ function HeroVisual() {
       <div className="hero-visual-frame">
         <img
           className="hero-visual-image"
-          src="/Portfolio/images/cyber-operations-hero.webp"
-          alt="Security analyst monitoring a modern cyber defense operations center"
+          src="/Portfolio/images/hijabi-soc-hero.webp"
+          alt="Woman cybersecurity analyst in a full-cover hijab and niqab at a security operations center"
           fetchPriority="high"
         />
         <div className="hero-image-shade" aria-hidden="true" />

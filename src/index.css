@@ -1116,3 +1116,16 @@ button, input, textarea { font-family: var(--font-sans); }
   .loader-line { font-size: 0.78rem; }
   .hero-float-bottom { width: auto; min-width: 0; max-width: calc(100vw - 2rem); }
 }
+
+
+/* User-requested smaller greeting: keep this change limited to the hero title. */
+.hero-title { font-size: clamp(3.35rem, 5.2vw, 4.5rem); }
+@media (max-width: 1050px) {
+  .hero-title { font-size: clamp(3.1rem, 6.8vw, 4.35rem); }
+}
+@media (max-width: 768px) {
+  .hero-title { font-size: clamp(2.9rem, 8.4vw, 3.85rem); }
+}
+@media (max-width: 560px) {
+  .hero-title { font-size: clamp(2.45rem, 10.5vw, 3.4rem); }
+}
